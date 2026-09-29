@@ -1,22 +1,22 @@
 # Astha Multispeciality Hospital
 
 A single-page, framework-free hospital portal prototype. One HTML page hosts five
-switchable views — **Website**, **Patient**, **Doctor**, **Admin**, and **Staff** —
+switchable views � **Website**, **Patient**, **Doctor**, **Admin**, and **Staff** �
 built with plain HTML, CSS, and vanilla JavaScript (no build step required).
 
 ## Project structure
 
 ```
 astha-hospital/
-├── index.html            # Markup + view containers (all screens)
-├── assets/
-│   ├── css/
-│   │   └── styles.css     # All styles (design tokens, components, Sangam section)
-│   ├── js/
-│   │   └── app.js         # App logic: data, rendering, view switching, actions
-│   └── img/               # Images / static assets
-├── README.md
-└── .gitignore
++-- index.html            # Markup + view containers (all screens)
++-- assets/
+�   +-- css/
+�   �   +-- styles.css     # All styles (design tokens, components, Sangam section)
+�   +-- js/
+�   �   +-- app.js         # App logic: data, rendering, view switching, actions
+�   +-- img/               # Images / static assets
++-- README.md
++-- .gitignore
 ```
 
 ## Running locally
@@ -49,4 +49,4 @@ Then visit http://localhost:5173.
 - Placeholder content (doctor names, qualifications) is wrapped in `[...]` and
   meant to be replaced with real hospital data.
 - Styles are driven by CSS custom properties defined in `:root` at the top of
-  [assets/css/styles.css](assets/css/styles.css) — edit those to re-theme.
+  [assets/css/styles.css](assets/css/styles.css) � edit those to re-theme.

@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    Astha Multispeciality Hospital - Application script
    Extracted from index.html
    ============================================================ */
@@ -15,7 +15,7 @@ const DEPTS=[
  {id:'gyn',n:'Gynecology',d:'Women\'s health, maternity and prenatal care.',ic:'<circle cx="12" cy="8" r="5"/><path d="M12 13v8M9 18h6"/>'}
 ];
 const DOCS=[
- {n:'Dr. [Cardiology]',dept:'cardio',sp:'Cardiology',ex:'Consultant Â· Heart Care',i:'C'},
+ {n:'Dr. [Cardiology]',dept:'cardio',sp:'Cardiology',ex:'Consultant · Heart Care',i:'C'},
  {n:'Dr. [Orthopedics]',dept:'ortho',sp:'Orthopedics',ex:'Joint & Spine Surgeon',i:'O'},
  {n:'Dr. [Neurology]',dept:'neuro',sp:'Neurology',ex:'Neurologist',i:'N'},
  {n:'Dr. [Pediatrics]',dept:'peds',sp:'Pediatrics',ex:'Child Specialist',i:'P'},
@@ -31,7 +31,7 @@ function deptCard(x,onclick){return `<div class="dept" ${onclick?`onclick="${onc
  <div class="dept-ic">${svgD(x.ic)}</div><h4>${x.n}</h4><p>${x.d}</p>
  <div class="go">Book now ${svgD('<path d="M5 12h14M13 6l6 6-6 6"/>')}</div></div>`;}
 function docCard(x,onclick){return `<div class="doc"><div class="doc-top"><div class="doc-av">${svgD('<path d="M8 3v4a4 4 0 0 0 8 0V3"/><path d="M6 21v-3a6 6 0 0 1 12 0v3"/><circle cx="18" cy="14" r="1.6"/>')}</div></div>
- <div class="doc-body"><div class="nm">${x.n}</div><div class="sp">${x.ex}</div><div class="meta">MBBS Â· MD Â· [qualifications]</div><div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
+ <div class="doc-body"><div class="nm">${x.n}</div><div class="sp">${x.ex}</div><div class="meta">MBBS · MD · [qualifications]</div><div class="stars">★★★★★</div>
  <button class="btn btn-primary btn-sm btn-block" onclick="${onclick||'startBooking(\''+x.dept+'\')'}">Book appointment</button></div></div>`;}
 
 document.getElementById('deptGrid').innerHTML=DEPTS.map(x=>deptCard(x)).join('');
@@ -53,7 +53,7 @@ let STAFF=[
 const ST_LABEL={active:'Active',onleave:'On leave',inactive:'Inactive'};
 function initials(name){
  const c=name.replace(/\[|\]|\./g,' ').trim().split(/\s+/).filter(Boolean);
- return ((c[0]?.[0]||'')+(c[1]?.[0]||'')).toUpperCase()||'â€”';
+ return ((c[0]?.[0]||'')+(c[1]?.[0]||'')).toUpperCase()||'—';
 }
 function roleClass(r){
  if(r==='Doctor')return'doc';
@@ -227,11 +227,11 @@ function pickDept(id){
 }
 function pickDoc(i){
  booking.doc=DOCS.find(d=>d.i===i);
- document.getElementById('schDoc').textContent=booking.doc.n+' Â· '+booking.doc.sp;
+ document.getElementById('schDoc').textContent=booking.doc.n+' · '+booking.doc.sp;
  const dt=document.getElementById('schDate');const t=new Date();t.setDate(t.getDate()+1);
  dt.value=t.toISOString().slice(0,10);dt.min=new Date().toISOString().slice(0,10);booking.date=dt.value;
  dt.onchange=()=>booking.date=dt.value;
- document.getElementById('slotGrid').innerHTML=SLOTS.map((s,idx)=>`<div class="slot ${idx%5===3?'off':''}" ${idx%5===3?'':`onclick="pickSlot(this,'${s}')"`}>${s} ${parseInt(s)<8?'AM':(parseInt(s)<4?'AM':'PM')}</div>`).join('');
+ document.getElementById('slotGrid').innerHTML=SLOTS.map((s,idx)=>`<div class="slot ${idx%5===3?'off':''}" ${idx%5===3?'':`onclick="pickSlot(this,'${s}')"`}>${s} ${(parseInt(s)>=7&&parseInt(s)<12)?'AM':'PM'}</div>`).join('');
  bookStep(3);
 }
 function pickSlot(el,s){
@@ -285,7 +285,7 @@ function renderBeds(){
 function pickBed(i){
  const b=BEDS[i];
  if(b.st!=='available'){toast('Bed '+b.no+' is '+b.st,true);return;}
- if(!selectedPatient){document.getElementById('bedHint').textContent='First pick a patient from "Awaiting admission" â†’';return;}
+ if(!selectedPatient){document.getElementById('bedHint').textContent='First pick a patient from "Awaiting admission" →';return;}
  document.querySelectorAll('.bed').forEach(x=>x.classList.remove('sel'));
  document.querySelector('.bed[data-i="'+i+'"]').classList.add('sel');
  selectedBed=i;
