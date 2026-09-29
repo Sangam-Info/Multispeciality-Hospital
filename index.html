@@ -1,841 +1,2597 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Astha Multispeciality Hospital</title>
-<link rel="icon" type="image/png" href="assets/img/logo-mark.png">
-<link rel="apple-touch-icon" href="assets/img/logo-mark.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astha Multispeciality Hospital</title>
+  <link rel="icon" type="image/png" href="assets/img/logo-mark.png">
+  <link rel="apple-touch-icon" href="assets/img/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
 <body>
 
-<!-- ===== APP BAR ===== -->
-<header class="appbar">
-  <div class="appbar-in">
-    <div class="brand">
-      <div class="brand-mark">
-        <img src="assets/img/logo-mark.png" alt="Astha+ Multispeciality Hospital logo">
-      </div>
-      <div>
-        <div class="brand-name">Astha<span>+</span> <span class="demo-tag">Demo</span></div>
-        <div class="brand-sub">Multispeciality Hospital</div>
-      </div>
-    </div>
-    <nav class="switcher" id="switcher">
-      <button class="on" data-view="web"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>Website</button>
-      <button data-view="patient"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>Patient</button>
-      <button data-view="doctor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v4a4 4 0 0 0 8 0V3"/><path d="M6 21v-3a6 6 0 0 1 12 0v3"/><circle cx="18" cy="14" r="2"/></svg>Doctor</button>
-      <button data-view="admin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Admin</button>
-      <button data-view="staff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Staff</button>
-    </nav>
-    <button class="appbar-menu" id="menuBtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-  </div>
-</header>
-
-<!-- ============================================================= WEBSITE VIEW -->
-<main class="view on" id="view-web">
-  <!-- screens: home / booking / confirm -->
-  <section class="screen on" id="web-home">
-    <!-- HERO -->
-    <div class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <span class="hero-pill"><i></i> Now accepting online appointments</span>
-          <h1>Compassionate care,<br><b>advanced medicine.</b></h1>
-          <p>Astha Multispeciality Hospital brings specialist doctors, modern diagnostics, and round-the-clock emergency care together under one trusted roof.</p>
-          <div class="hero-cta">
-            <button class="btn btn-primary" onclick="startBooking()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Book Appointment</button>
-            <button class="btn btn-ghost" onclick="scrollToId('deptSec')">Explore Departments</button>
-          </div>
-          <div class="hero-trust">
-            <div><div class="n" data-count="24">0</div><div class="l">Specialities</div></div>
-            <div><div class="n" data-count="80">0</div><div class="l">Expert doctors</div></div>
-            <div><div class="n" data-count="24">0</div><div class="l">Hours emergency</div></div>
-          </div>
+  <!-- ===== APP BAR ===== -->
+  <header class="appbar">
+    <div class="appbar-in">
+      <div class="brand">
+        <div class="brand-mark">
+          <img src="assets/img/logo-mark.png" alt="Astha+ Multispeciality Hospital logo">
         </div>
-        <!-- 3D STAGE -->
-        <div class="stage">
-          <div class="orb orb1 float"></div>
-          <div class="orb orb2 float-2"></div>
-          <div class="stage-card sc-main tilt float">
-            <div class="pulse-wrap">
-              <div class="lbl"><span>Live monitoring</span><span>ICU · Bed 04</span></div>
-              <div class="bpm">72 <small>bpm</small></div>
-              <svg class="ecg" viewBox="0 0 300 66" preserveAspectRatio="none"><path d="M0 33 H60 l6 -22 l7 40 l6 -30 l8 12 H150 l6 -22 l7 40 l6 -30 l8 12 H300"/></svg>
-            </div>
-            <div class="mini-rows">
-              <div class="mini-row"><span class="ic ic-red"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3.2 1.2 4 2.3C10.8 6.2 12 5 14 5c3.5 0 5 4 3.5 7-2.5 4.5-9.5 9-5.5 9z"/></svg></span> Blood pressure <b>118/76</b></div>
-              <div class="mini-row"><span class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.4"/></svg></span> SpO₂ level <b>98%</b></div>
-              <div class="mini-row"><span class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></span> Temperature <b>98.4°F</b></div>
-            </div>
-          </div>
-          <div class="stage-card sc-badge float-3">
-            <div class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg></div>
-            <div><div class="t1">Appointment</div><div class="t2">Confirmed</div></div>
-          </div>
-          <div class="stage-card sc-doc float-2">
-            <div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v4a4 4 0 0 0 8 0V3"/><path d="M6 21v-3a6 6 0 0 1 12 0v3"/><circle cx="18" cy="14" r="1.6"/></svg></div>
-            <div class="nm">Dr. [Cardiology]</div>
-            <div class="sp">Consultant · Heart Care</div>
-            <div class="stars">★★★★★</div>
-          </div>
+        <div>
         </div>
       </div>
+      <nav class="switcher" id="switcher">
+        <button class="on" data-view="web"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z" />
+          </svg>Website</button>
+        <button data-view="patient"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 21c0-4 4-6 8-6s8 2 8 6" />
+          </svg>Patient</button>
+        <button data-view="doctor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M8 3v4a4 4 0 0 0 8 0V3" />
+            <path d="M6 21v-3a6 6 0 0 1 12 0v3" />
+            <circle cx="18" cy="14" r="2" />
+          </svg>Doctor</button>
+        <button data-view="admin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="9" rx="1.5" />
+            <rect x="14" y="3" width="7" height="5" rx="1.5" />
+            <rect x="14" y="12" width="7" height="9" rx="1.5" />
+            <rect x="3" y="16" width="7" height="5" rx="1.5" />
+          </svg>Admin</button>
+        <button data-view="staff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>Staff</button>
+      </nav>
+      <button class="appbar-menu" id="menuBtn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.2">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg></button>
     </div>
+  </header>
 
-    <!-- DEPARTMENTS -->
-    <div class="section" id="deptSec">
+  <!-- ============================================================= WEBSITE VIEW -->
+  <main class="view on" id="view-web">
+    <!-- screens: home / booking / confirm -->
+    <section class="screen on" id="web-home">
+      <!-- HERO -->
+      <div class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <span class="hero-pill"><i></i> Now accepting online appointments</span>
+            <h1>Compassionate care,<br><b>advanced medicine.</b></h1>
+            <p>Astha Multispeciality Hospital brings specialist doctors, modern diagnostics, and round-the-clock
+              emergency care together under one trusted roof.</p>
+            <div class="hero-cta">
+              <button class="btn btn-primary" onclick="startBooking()"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg>Book Appointment</button>
+              <button class="btn btn-ghost" onclick="scrollToId('deptSec')">Explore Departments</button>
+            </div>
+            <div class="hero-trust">
+              <div>
+                <div class="n" data-count="24">0</div>
+                <div class="l">Specialities</div>
+              </div>
+              <div>
+                <div class="n" data-count="80">0</div>
+                <div class="l">Expert doctors</div>
+              </div>
+              <div>
+                <div class="n" data-count="24">0</div>
+                <div class="l">Hours emergency</div>
+              </div>
+            </div>
+          </div>
+          <!-- 3D STAGE -->
+          <div class="stage">
+            <div class="orb orb1 float"></div>
+            <div class="orb orb2 float-2"></div>
+            <div class="stage-card sc-main tilt float">
+              <div class="pulse-wrap">
+                <div class="lbl"><span>Live monitoring</span><span>ICU · Bed 04</span></div>
+                <div class="bpm">72 <small>bpm</small></div>
+                <svg class="ecg" viewBox="0 0 300 66" preserveAspectRatio="none">
+                  <path d="M0 33 H60 l6 -22 l7 40 l6 -30 l8 12 H150 l6 -22 l7 40 l6 -30 l8 12 H300" />
+                </svg>
+              </div>
+              <div class="mini-rows">
+                <div class="mini-row"><span class="ic ic-red"><svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 21s-7-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3.2 1.2 4 2.3C10.8 6.2 12 5 14 5c3.5 0 5 4 3.5 7-2.5 4.5-9.5 9-5.5 9z" />
+                    </svg></span> Blood pressure <b>118/76</b></div>
+                <div class="mini-row"><span class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2">
+                      <path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z" />
+                      <circle cx="12" cy="9" r="2.4" />
+                    </svg></span> SpO₂ level <b>98%</b></div>
+                <div class="mini-row"><span class="ic ic-green"><svg viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2">
+                      <path d="M3 12h4l2-6 4 12 2-6h6" />
+                    </svg></span> Temperature <b>98.4°F</b></div>
+              </div>
+            </div>
+            <div class="stage-card sc-badge float-3">
+              <div class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg></div>
+              <div>
+                <div class="t1">Appointment</div>
+                <div class="t2">Confirmed</div>
+              </div>
+            </div>
+            <div class="stage-card sc-doc float-2">
+              <div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M8 3v4a4 4 0 0 0 8 0V3" />
+                  <path d="M6 21v-3a6 6 0 0 1 12 0v3" />
+                  <circle cx="18" cy="14" r="1.6" />
+                </svg></div>
+              <div class="nm">Dr. [Cardiology]</div>
+              <div class="sp">Consultant · Heart Care</div>
+              <div class="stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEPARTMENTS -->
+      <div class="section" id="deptSec">
+        <div class="wrap">
+          <div class="section-h">
+            <div>
+              <div class="eyebrow">Centres of excellence</div>
+              <h2>Our departments</h2>
+              <p>Specialist teams and dedicated facilities across every major area of medicine.</p>
+            </div>
+            <button class="btn btn-ghost btn-sm" onclick="startBooking()">Book a visit</button>
+          </div>
+          <div class="dept-grid" id="deptGrid"></div>
+        </div>
+      </div>
+
+      <!-- DOCTORS -->
+      <div class="section" style="padding-top:0">
+        <div class="wrap">
+          <div class="section-h">
+            <div>
+              <div class="eyebrow">Meet the team</div>
+              <h2>Our specialists</h2>
+              <p>Experienced consultants committed to evidence-based, patient-first care.</p>
+            </div>
+          </div>
+          <div class="doc-grid" id="docGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING SCREEN -->
+    <section class="screen" id="web-book">
+      <div class="wrap" style="padding-top:40px;padding-bottom:60px">
+        <button class="btn btn-ghost btn-sm" style="margin-bottom:24px" onclick="webGo('home')"><svg viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>Back to home</button>
+        <div class="steps" id="bookSteps">
+          <div class="step active">
+            <div class="dot">1</div>
+            <div class="lbl">Department</div>
+            <div class="bar"></div>
+          </div>
+          <div class="step">
+            <div class="dot">2</div>
+            <div class="lbl">Doctor</div>
+            <div class="bar"></div>
+          </div>
+          <div class="step">
+            <div class="dot">3</div>
+            <div class="lbl">Schedule</div>
+            <div class="bar"></div>
+          </div>
+          <div class="step">
+            <div class="dot">4</div>
+            <div class="lbl">Details</div>
+          </div>
+        </div>
+
+        <!-- step 1: department -->
+        <div class="book-card" id="bs-1">
+          <div class="section-h" style="justify-content:center;text-align:center;margin-bottom:24px">
+            <div>
+              <h2 style="font-size:24px">Choose a department</h2>
+              <p style="margin-left:auto;margin-right:auto">Select the speciality you'd like to consult.</p>
+            </div>
+          </div>
+          <div class="dept-grid" id="bookDeptGrid" style="grid-template-columns:repeat(3,1fr)"></div>
+        </div>
+
+        <!-- step 2: doctor -->
+        <div class="book-card" id="bs-2" style="display:none">
+          <div class="section-h" style="justify-content:center;text-align:center;margin-bottom:24px">
+            <div>
+              <h2 style="font-size:24px">Select your doctor</h2>
+              <p style="margin-left:auto;margin-right:auto" id="bookDocSub">Available consultants</p>
+            </div>
+          </div>
+          <div class="doc-grid" id="bookDocGrid" style="grid-template-columns:repeat(3,1fr)"></div>
+        </div>
+
+        <!-- step 3: schedule -->
+        <div class="book-card card" id="bs-3" style="display:none;padding:28px">
+          <h3 style="font-size:19px;margin-bottom:6px">Pick a date & time</h3>
+          <p style="color:var(--muted);font-size:14px;margin-bottom:22px">Consultation with <b id="schDoc"
+              style="color:var(--text)"></b></p>
+          <div class="field"><label>Appointment date</label><input type="date" id="schDate"></div>
+          <div class="field"><label>Available time slots</label>
+            <div class="slot-grid" id="slotGrid"></div>
+          </div>
+          <div style="display:flex;gap:12px;margin-top:26px"><button class="btn btn-ghost"
+              onclick="bookStep(2)">Back</button><button class="btn btn-primary btn-block" id="schNext"
+              onclick="bookStep(4)" disabled style="opacity:.5">Continue</button></div>
+        </div>
+
+        <!-- step 4: details -->
+        <div class="book-card card" id="bs-4" style="display:none;padding:28px">
+          <h3 style="font-size:19px;margin-bottom:22px">Your details</h3>
+          <div class="grid-2b">
+            <div class="field"><label>Full name</label><input id="pName" placeholder="Enter patient name"></div>
+            <div class="field"><label>Mobile number</label><input id="pPhone" placeholder="+91 __________"></div>
+          </div>
+          <div class="grid-2b">
+            <div class="field"><label>Age</label><input id="pAge" placeholder="Age"></div>
+            <div class="field"><label>Gender</label><select id="pGender">
+                <option>Female</option>
+                <option>Male</option>
+                <option>Other</option>
+              </select></div>
+          </div>
+          <div class="field"><label>Reason for visit <span
+                style="color:var(--muted);font-weight:400">(optional)</span></label><textarea id="pReason" rows="3"
+              placeholder="Briefly describe your symptoms"></textarea></div>
+          <div style="display:flex;gap:12px;margin-top:10px"><button class="btn btn-ghost"
+              onclick="bookStep(3)">Back</button><button class="btn btn-primary btn-block"
+              onclick="confirmBooking()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>Confirm appointment</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFIRMATION SCREEN -->
+    <section class="screen" id="web-confirm">
       <div class="wrap">
-        <div class="section-h">
-          <div>
-            <div class="eyebrow">Centres of excellence</div>
-            <h2>Our departments</h2>
-            <p>Specialist teams and dedicated facilities across every major area of medicine.</p>
-          </div>
-          <button class="btn btn-ghost btn-sm" onclick="startBooking()">Book a visit</button>
-        </div>
-        <div class="dept-grid" id="deptGrid"></div>
-      </div>
-    </div>
-
-    <!-- DOCTORS -->
-    <div class="section" style="padding-top:0">
-      <div class="wrap">
-        <div class="section-h">
-          <div>
-            <div class="eyebrow">Meet the team</div>
-            <h2>Our specialists</h2>
-            <p>Experienced consultants committed to evidence-based, patient-first care.</p>
-          </div>
-        </div>
-        <div class="doc-grid" id="docGrid"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BOOKING SCREEN -->
-  <section class="screen" id="web-book">
-    <div class="wrap" style="padding-top:40px;padding-bottom:60px">
-      <button class="btn btn-ghost btn-sm" style="margin-bottom:24px" onclick="webGo('home')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>Back to home</button>
-      <div class="steps" id="bookSteps">
-        <div class="step active"><div class="dot">1</div><div class="lbl">Department</div><div class="bar"></div></div>
-        <div class="step"><div class="dot">2</div><div class="lbl">Doctor</div><div class="bar"></div></div>
-        <div class="step"><div class="dot">3</div><div class="lbl">Schedule</div><div class="bar"></div></div>
-        <div class="step"><div class="dot">4</div><div class="lbl">Details</div></div>
-      </div>
-
-      <!-- step 1: department -->
-      <div class="book-card" id="bs-1">
-        <div class="section-h" style="justify-content:center;text-align:center;margin-bottom:24px"><div><h2 style="font-size:24px">Choose a department</h2><p style="margin-left:auto;margin-right:auto">Select the speciality you'd like to consult.</p></div></div>
-        <div class="dept-grid" id="bookDeptGrid" style="grid-template-columns:repeat(3,1fr)"></div>
-      </div>
-
-      <!-- step 2: doctor -->
-      <div class="book-card" id="bs-2" style="display:none">
-        <div class="section-h" style="justify-content:center;text-align:center;margin-bottom:24px"><div><h2 style="font-size:24px">Select your doctor</h2><p style="margin-left:auto;margin-right:auto" id="bookDocSub">Available consultants</p></div></div>
-        <div class="doc-grid" id="bookDocGrid" style="grid-template-columns:repeat(3,1fr)"></div>
-      </div>
-
-      <!-- step 3: schedule -->
-      <div class="book-card card" id="bs-3" style="display:none;padding:28px">
-        <h3 style="font-size:19px;margin-bottom:6px">Pick a date & time</h3>
-        <p style="color:var(--muted);font-size:14px;margin-bottom:22px">Consultation with <b id="schDoc" style="color:var(--text)"></b></p>
-        <div class="field"><label>Appointment date</label><input type="date" id="schDate"></div>
-        <div class="field"><label>Available time slots</label>
-          <div class="slot-grid" id="slotGrid"></div>
-        </div>
-        <div style="display:flex;gap:12px;margin-top:26px"><button class="btn btn-ghost" onclick="bookStep(2)">Back</button><button class="btn btn-primary btn-block" id="schNext" onclick="bookStep(4)" disabled style="opacity:.5">Continue</button></div>
-      </div>
-
-      <!-- step 4: details -->
-      <div class="book-card card" id="bs-4" style="display:none;padding:28px">
-        <h3 style="font-size:19px;margin-bottom:22px">Your details</h3>
-        <div class="grid-2b">
-          <div class="field"><label>Full name</label><input id="pName" placeholder="Enter patient name"></div>
-          <div class="field"><label>Mobile number</label><input id="pPhone" placeholder="+91 __________"></div>
-        </div>
-        <div class="grid-2b">
-          <div class="field"><label>Age</label><input id="pAge" placeholder="Age"></div>
-          <div class="field"><label>Gender</label><select id="pGender"><option>Female</option><option>Male</option><option>Other</option></select></div>
-        </div>
-        <div class="field"><label>Reason for visit <span style="color:var(--muted);font-weight:400">(optional)</span></label><textarea id="pReason" rows="3" placeholder="Briefly describe your symptoms"></textarea></div>
-        <div style="display:flex;gap:12px;margin-top:10px"><button class="btn btn-ghost" onclick="bookStep(3)">Back</button><button class="btn btn-primary btn-block" onclick="confirmBooking()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Confirm appointment</button></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONFIRMATION SCREEN -->
-  <section class="screen" id="web-confirm">
-    <div class="wrap">
-      <div class="confirm card">
-        <div class="check-ring">
-          <svg viewBox="0 0 104 104"><circle class="bg" cx="52" cy="52" r="48"/><circle class="fg" cx="52" cy="52" r="48"/></svg>
-          <div class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
-        </div>
-        <h2>Appointment confirmed</h2>
-        <p>A confirmation has been sent to your mobile number. Please arrive 10 minutes early.</p>
-        <div class="rcpt" id="rcpt"></div>
-        <div style="display:flex;gap:12px"><button class="btn btn-ghost btn-block" onclick="webGo('home')">Back to home</button><button class="btn btn-primary btn-block" onclick="viewInPortal()">View in portal</button></div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer class="foot">
-    <div class="wrap foot-grid">
-      <div>
-        <div class="brand" style="margin-bottom:14px"><div class="brand-mark"><img src="assets/img/logo-mark.png" alt="Astha+ Multispeciality Hospital logo"></div><div><div class="brand-name" style="color:#fff">Astha<span>+</span></div><div class="brand-sub" style="color:rgba(255,255,255,.6)">Multispeciality Hospital</div></div></div>
-        <p style="font-size:13.5px;max-width:34ch">Trusted multispeciality care with modern diagnostics and 24×7 emergency services.</p>
-      </div>
-      <div><h5>Care</h5><a>Departments</a><a>Our doctors</a><a>Book appointment</a><a>Health packages</a></div>
-      <div><h5>Patients</h5><a>Patient portal</a><a>Lab reports</a><a>Billing</a><a>Insurance</a></div>
-      <div><h5>Contact</h5><a>Emergency: [placeholder]</a><a>Reception: [placeholder]</a><a>[Hospital address]</a><a>[City, State]</a></div>
-    </div>
-    <div class="wrap"><div class="cr">© Astha Multispeciality Hospital — prototype for demonstration. All details shown are placeholders. &nbsp;·&nbsp; <a href="https://www.sangaminfoanalytics.online/" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:underline;cursor:pointer;font-weight:600">Designed &amp; developed by Sangam InfoAnalytics</a></div></div>
-  </footer>
-</main>
-
-<!-- ============================================================= PATIENT PORTAL -->
-<main class="view" id="view-patient">
- <div class="portal">
-  <aside class="side" id="side-patient">
-    <div class="side-user"><div class="av">RS</div><div><div class="nm">Riya Sharma</div><div class="rl">Patient · ID PT-2041</div></div></div>
-    <div class="nav-lbl">Menu</div>
-    <div class="nav-item on" data-scr="pt-dash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="5" rx="2"/><rect x="13" y="10" width="8" height="11" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/></svg>Dashboard</div>
-    <div class="nav-item" data-scr="pt-appts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Appointments</div>
-    <div class="nav-item" data-scr="pt-records"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg>Medical records</div>
-    <div class="nav-item" data-scr="pt-lab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3v6l-5 8a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-8V3"/><path d="M8 3h8"/></svg>Lab reports</div>
-    <div class="nav-item" data-scr="pt-rx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8h9a4 4 0 0 1 0 8h-4l4 4M5 8v12M5 8V4h5"/></svg>Prescriptions</div>
-    <div class="nav-item" data-scr="pt-billing"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Billing</div>
-    <div class="nav-lbl">Account</div>
-    <div class="nav-item" data-scr="pt-profile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>Profile</div>
-    <button class="side-signout" onclick="signOut()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>Sign out</button>
-  </aside>
-  <div class="main">
-    <!-- DASHBOARD -->
-    <section class="screen on" id="pt-dash">
-      <div class="page-head"><div><h1>Good morning, Riya 👋</h1><p>Here's a summary of your health and upcoming care.</p></div><div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>3 updates</div></div>
-      <div class="stat-grid">
-        <div class="stat"><div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><div class="v" data-count="2">0</div><div class="k">Upcoming appointments</div></div>
-        <div class="stat"><div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg></div><div class="v" data-count="12">0</div><div class="k">Medical records</div></div>
-        <div class="stat"><div class="ic ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3v6l-5 8a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-8V3"/></svg></div><div class="v"><span data-count="1">0</span> new</div><div class="k">Lab report pending</div></div>
-        <div class="stat"><div class="ic ic-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div><div class="v">₹<span data-count="1450">0</span></div><div class="k">Outstanding balance</div></div>
-      </div>
-      <div class="grid-2">
-        <div>
-          <div class="panel">
-            <div class="panel-h"><h3>Upcoming appointments</h3><a onclick="ptGo('pt-appts')">View all</a></div>
-            <div class="appt-list" id="ptDashUpcoming">
-              <div class="appt"><div class="tm"><div class="h">10:30</div><div class="m">AM</div></div><div class="sep"></div><div class="av">C</div><div class="info"><div class="nm">Dr. [Cardiology]</div><div class="sub">Cardiology · Follow-up consultation</div></div><span class="badge b-confirmed">Confirmed</span></div>
-              <div class="appt"><div class="tm"><div class="h">04:00</div><div class="m">PM</div></div><div class="sep"></div><div class="av">D</div><div class="info"><div class="nm">Dr. [Dermatology]</div><div class="sub">Dermatology · New consultation</div></div><span class="badge b-pending pulse">Pending</span></div>
-            </div>
-          </div>
-          <div class="panel">
-            <div class="panel-h"><h3>Active prescriptions</h3><a onclick="ptGo('pt-rx')">Manage</a></div>
-            <table class="tbl"><thead><tr><th>Medicine</th><th>Dosage</th><th>Duration</th><th>Status</th></tr></thead><tbody>
-              <tr><td><b>Amlodipine 5mg</b></td><td>1-0-1</td><td>30 days</td><td><span class="badge b-confirmed">Ongoing</span></td></tr>
-              <tr><td><b>Atorvastatin 10mg</b></td><td>0-0-1</td><td>30 days</td><td><span class="badge b-confirmed">Ongoing</span></td></tr>
-              <tr><td><b>Vitamin D3</b></td><td>Weekly</td><td>8 weeks</td><td><span class="badge b-completed">Completed</span></td></tr>
-            </tbody></table>
-          </div>
-        </div>
-        <div>
-          <div class="panel">
-            <div class="panel-h"><h3>Health snapshot</h3></div>
-            <div class="vitals" style="grid-template-columns:1fr 1fr">
-              <div class="vital"><div class="v">118/76</div><div class="k">Blood pressure</div></div>
-              <div class="vital"><div class="v">72 bpm</div><div class="k">Heart rate</div></div>
-              <div class="vital"><div class="v">98.4°F</div><div class="k">Temperature</div></div>
-              <div class="vital"><div class="v">64 kg</div><div class="k">Weight</div></div>
-            </div>
-          </div>
-          <div class="panel">
-            <div class="panel-h"><h3>Notifications</h3></div>
-            <div class="hist-item"><div class="dot"></div><div><div class="t">Lab report ready</div><div class="d">Complete Blood Count · 2h ago</div></div></div>
-            <div class="hist-item"><div class="dot" style="background:var(--warning);box-shadow:0 0 0 4px #fdf2df"></div><div><div class="t">Appointment reminder</div><div class="d">Cardiology tomorrow, 10:30 AM</div></div></div>
-            <div class="hist-item"><div class="dot" style="background:var(--blue);box-shadow:0 0 0 4px var(--blue-050)"></div><div><div class="t">Payment due</div><div class="d">₹1,450 pending · Invoice INV-882</div></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- APPOINTMENTS -->
-    <section class="screen" id="pt-appts">
-      <div class="page-head"><div><h1>Appointments</h1><p>Your scheduled and past visits.</p></div><button class="btn btn-primary btn-sm" onclick="switchView('web');startBooking()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>New appointment</button></div>
-      <div class="panel"><div class="panel-h"><h3>Upcoming</h3></div>
-        <div class="appt-list" id="ptApptUpcoming">
-          <div class="appt"><div class="tm"><div class="h">10:30</div><div class="m">AM · Tmrw</div></div><div class="sep"></div><div class="av">C</div><div class="info"><div class="nm">Dr. [Cardiology]</div><div class="sub">Cardiology · Room 204</div></div><span class="badge b-confirmed">Confirmed</span></div>
-          <div class="appt"><div class="tm"><div class="h">04:00</div><div class="m">PM · Fri</div></div><div class="sep"></div><div class="av">D</div><div class="info"><div class="nm">Dr. [Dermatology]</div><div class="sub">Dermatology · Room 118</div></div><span class="badge b-pending pulse">Pending</span></div>
-        </div>
-      </div>
-      <div class="panel"><div class="panel-h"><h3>Past visits</h3></div>
-        <table class="tbl"><thead><tr><th>Doctor</th><th>Department</th><th>Date</th><th>Status</th></tr></thead><tbody>
-          <tr><td class="who"><div class="av">O</div><div><div class="nm">Dr. [Orthopedics]</div><div class="sub">Consultant</div></div></td><td>Orthopedics</td><td>12 May 2026</td><td><span class="badge b-completed">Completed</span></td></tr>
-          <tr><td class="who"><div class="av">G</div><div><div class="nm">Dr. [General]</div><div class="sub">Physician</div></div></td><td>General Medicine</td><td>28 Apr 2026</td><td><span class="badge b-completed">Completed</span></td></tr>
-          <tr><td class="who"><div class="av">E</div><div><div class="nm">Dr. [ENT]</div><div class="sub">Consultant</div></div></td><td>ENT</td><td>03 Apr 2026</td><td><span class="badge b-cancelled">Cancelled</span></td></tr>
-        </tbody></table>
-      </div>
-    </section>
-
-    <!-- RECORDS -->
-    <section class="screen" id="pt-records">
-      <div class="page-head"><div><h1>Medical records</h1><p>Consultations, diagnoses and discharge summaries.</p></div></div>
-      <div class="rec-grid">
-        <div class="rec"><div class="top"><div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3.2 1.2 4 2.3C10.8 6.2 12 5 14 5c3.5 0 5 4 3.5 7-2.5 4.5-9.5 9-5.5 9z"/></svg></div><div><div class="t">Cardiology consult</div><div class="d">Dr. [Cardiology]</div></div></div><div class="row"><span>Date</span><b>12 May 2026</b></div><div class="row"><span>Diagnosis</span><b>Hypertension</b></div><button class="btn btn-ghost btn-sm btn-block" style="margin-top:14px">View record</button></div>
-        <div class="rec"><div class="top"><div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v4a4 4 0 0 0 8 0V3"/><path d="M6 21v-3a6 6 0 0 1 12 0v3"/></svg></div><div><div class="t">General check-up</div><div class="d">Dr. [General]</div></div></div><div class="row"><span>Date</span><b>28 Apr 2026</b></div><div class="row"><span>Diagnosis</span><b>Routine · Normal</b></div><button class="btn btn-ghost btn-sm btn-block" style="margin-top:14px">View record</button></div>
-        <div class="rec"><div class="top"><div class="ic ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3v6a3 3 0 0 0 6 0V3"/><path d="M9 15v6"/></svg></div><div><div class="t">Orthopedic review</div><div class="d">Dr. [Orthopedics]</div></div></div><div class="row"><span>Date</span><b>03 Apr 2026</b></div><div class="row"><span>Diagnosis</span><b>Knee strain</b></div><button class="btn btn-ghost btn-sm btn-block" style="margin-top:14px">View record</button></div>
-      </div>
-    </section>
-
-    <!-- LAB -->
-    <section class="screen" id="pt-lab">
-      <div class="page-head"><div><h1>Lab reports</h1><p>Diagnostic results and pathology.</p></div></div>
-      <div class="rec-grid">
-        <div class="rec"><div class="top"><div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3v6l-5 8a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-8V3"/></svg></div><div><div class="t">Complete Blood Count</div><div class="d">Pathology</div></div></div><div class="row"><span>Collected</span><b>Today</b></div><div class="row"><span>Status</span><span class="badge b-completed-lab">Completed</span></div><button class="btn btn-primary btn-sm btn-block" style="margin-top:14px">Download report</button></div>
-        <div class="rec"><div class="top"><div class="ic ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3v6l-5 8a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-8V3"/></svg></div><div><div class="t">Lipid Profile</div><div class="d">Biochemistry</div></div></div><div class="row"><span>Collected</span><b>Today</b></div><div class="row"><span>Status</span><span class="badge b-processing pulse">Processing</span></div><button class="btn btn-ghost btn-sm btn-block" style="margin-top:14px" disabled>Awaiting results</button></div>
-        <div class="rec"><div class="top"><div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3v6l-5 8a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-8V3"/></svg></div><div><div class="t">Thyroid Panel</div><div class="d">Endocrinology</div></div></div><div class="row"><span>Collected</span><b>08 May 2026</b></div><div class="row"><span>Status</span><span class="badge b-completed-lab">Completed</span></div><button class="btn btn-primary btn-sm btn-block" style="margin-top:14px">Download report</button></div>
-      </div>
-    </section>
-
-    <!-- PRESCRIPTIONS -->
-    <section class="screen" id="pt-rx">
-      <div class="page-head"><div><h1>Prescriptions</h1><p>Current and past medication plans.</p></div></div>
-      <div class="panel"><div class="panel-h"><h3>Current medication</h3><span class="badge b-confirmed">Active plan</span></div>
-        <table class="tbl"><thead><tr><th>Medicine</th><th>Dosage</th><th>Timing</th><th>Duration</th><th>Prescribed by</th></tr></thead><tbody>
-          <tr><td><b>Amlodipine 5mg</b></td><td>1-0-1</td><td>After food</td><td>30 days</td><td>Dr. [Cardiology]</td></tr>
-          <tr><td><b>Atorvastatin 10mg</b></td><td>0-0-1</td><td>Bedtime</td><td>30 days</td><td>Dr. [Cardiology]</td></tr>
-          <tr><td><b>Vitamin D3 60k</b></td><td>Weekly</td><td>After food</td><td>8 weeks</td><td>Dr. [General]</td></tr>
-        </tbody></table>
-      </div>
-    </section>
-
-    <!-- BILLING -->
-    <section class="screen" id="pt-billing">
-      <div class="page-head"><div><h1>Billing & payments</h1><p>Invoices, payments and insurance.</p></div></div>
-      <div class="stat-grid" style="grid-template-columns:repeat(3,1fr)">
-        <div class="stat"><div class="ic ic-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="v">₹<span data-count="1450">0</span></div><div class="k">Outstanding</div></div>
-        <div class="stat"><div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div><div class="v">₹<span data-count="28600">0</span></div><div class="k">Paid this year</div></div>
-        <div class="stat"><div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg></div><div class="v" data-count="6">0</div><div class="k">Total invoices</div></div>
-      </div>
-      <div class="panel"><div class="panel-h"><h3>Invoices</h3></div>
-        <table class="tbl"><thead><tr><th>Invoice</th><th>For</th><th>Date</th><th>Amount</th><th>Status</th><th></th></tr></thead><tbody>
-          <tr><td><b>INV-882</b></td><td>Cardiology consult</td><td>12 May 2026</td><td>₹1,450</td><td><span class="badge b-pending">Due</span></td><td><button class="btn btn-primary btn-sm">Pay now</button></td></tr>
-          <tr><td><b>INV-861</b></td><td>Lab · CBC + Lipid</td><td>08 May 2026</td><td>₹2,100</td><td><span class="badge b-completed-lab">Paid</span></td><td></td></tr>
-          <tr><td><b>INV-844</b></td><td>General check-up</td><td>28 Apr 2026</td><td>₹800</td><td><span class="badge b-completed-lab">Paid</span></td><td></td></tr>
-        </tbody></table>
-      </div>
-    </section>
-
-    <!-- PROFILE -->
-    <section class="screen" id="pt-profile">
-      <div class="page-head"><div><h1>Profile</h1><p>Personal and medical information.</p></div></div>
-      <div class="grid-2b">
-        <div class="panel"><div class="panel-h"><h3>Personal details</h3></div>
-          <table class="tbl"><tbody>
-            <tr><td style="color:var(--muted)">Full name</td><td style="text-align:right"><b>Riya Sharma</b></td></tr>
-            <tr><td style="color:var(--muted)">Patient ID</td><td style="text-align:right"><b>PT-2041</b></td></tr>
-            <tr><td style="color:var(--muted)">Age / Gender</td><td style="text-align:right"><b>32 · Female</b></td></tr>
-            <tr><td style="color:var(--muted)">Mobile</td><td style="text-align:right"><b>[placeholder]</b></td></tr>
-            <tr><td style="color:var(--muted)">Blood group</td><td style="text-align:right"><b>O+</b></td></tr>
-          </tbody></table>
-        </div>
-        <div class="panel"><div class="panel-h"><h3>Medical summary</h3></div>
-          <table class="tbl"><tbody>
-            <tr><td style="color:var(--muted)">Allergies</td><td style="text-align:right"><b>None recorded</b></td></tr>
-            <tr><td style="color:var(--muted)">Chronic conditions</td><td style="text-align:right"><b>Hypertension</b></td></tr>
-            <tr><td style="color:var(--muted)">Primary doctor</td><td style="text-align:right"><b>Dr. [Cardiology]</b></td></tr>
-            <tr><td style="color:var(--muted)">Insurance</td><td style="text-align:right"><b>[Provider placeholder]</b></td></tr>
-          </tbody></table>
-        </div>
-      </div>
-    </section>
-  </div>
- </div>
-</main>
-
-<!-- ============================================================= DOCTOR PORTAL -->
-<main class="view" id="view-doctor">
- <div class="portal">
-  <aside class="side" id="side-doctor">
-    <div class="side-user"><div class="av">DC</div><div><div class="nm">Dr. [Cardiology]</div><div class="rl">Cardiology · Consultant</div></div></div>
-    <div class="nav-lbl">Clinical</div>
-    <div class="nav-item on" data-scr="dr-dash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="5" rx="2"/><rect x="13" y="10" width="8" height="11" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/></svg>Dashboard</div>
-    <div class="nav-item" data-scr="dr-patients"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M3 21c0-3.5 3-5.5 6-5.5s6 2 6 5.5"/><path d="M17 7h4M19 5v4"/></svg>My patients</div>
-    <div class="nav-item" data-scr="dr-consult"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 13h6M9 17h4"/></svg>Consultation</div>
-    <div class="nav-item" data-scr="dr-lab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3v6l-5 8a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-8V3"/></svg>Lab reports</div>
-    <button class="side-signout" onclick="signOut()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>Sign out</button>
-  </aside>
-  <div class="main">
-    <!-- DOCTOR DASHBOARD -->
-    <section class="screen on" id="dr-dash">
-      <div class="page-head"><div><h1>Today's clinic</h1><p class="hi">Thursday, 14 September · 8 appointments scheduled</p></div><div class="chip"><span class="badge b-available" style="background:none;padding:0">Available</span> On duty</div></div>
-      <div class="stat-grid">
-        <div class="stat"><div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><div class="v" data-count="8">0</div><div class="k">Appointments today</div></div>
-        <div class="stat"><div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div><div class="v" data-count="3">0</div><div class="k">Consultations done</div></div>
-        <div class="stat"><div class="ic ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/></svg></div><div class="v" data-count="5">0</div><div class="k">Waiting</div></div>
-        <div class="stat"><div class="ic ic-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3v6l-5 8a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-8V3"/></svg></div><div class="v" data-count="2">0</div><div class="k">Reports to review</div></div>
-      </div>
-      <div class="grid-2">
-        <div class="panel"><div class="panel-h"><h3>Appointment queue</h3><a>Full schedule</a></div>
-          <div class="appt-list">
-            <div class="appt"><div class="tm"><div class="h">10:30</div><div class="m">AM</div></div><div class="sep"></div><div class="av">RS</div><div class="info"><div class="nm">Riya Sharma</div><div class="sub">Follow-up · Hypertension</div></div><button class="btn btn-primary btn-sm" onclick="openConsult('Riya Sharma')">Start</button></div>
-            <div class="appt"><div class="tm"><div class="h">10:45</div><div class="m">AM</div></div><div class="sep"></div><div class="av">AM</div><div class="info"><div class="nm">Arun Mehta</div><div class="sub">New · Chest discomfort</div></div><span class="badge b-confirmed">Confirmed</span></div>
-            <div class="appt"><div class="tm"><div class="h">11:15</div><div class="m">AM</div></div><div class="sep"></div><div class="av">PK</div><div class="info"><div class="nm">Priya Kulkarni</div><div class="sub">Follow-up · Post-op review</div></div><span class="badge b-pending pulse">Waiting</span></div>
-            <div class="appt"><div class="tm"><div class="h">11:45</div><div class="m">AM</div></div><div class="sep"></div><div class="av">SV</div><div class="info"><div class="nm">Sanjay Verma</div><div class="sub">New · Palpitations</div></div><span class="badge b-confirmed">Confirmed</span></div>
-          </div>
-        </div>
-        <div class="panel"><div class="panel-h"><h3>Consultation load</h3></div>
-          <div class="chart-bars" id="drChart">
-            <div class="cbar"><div class="col" data-h="60" data-v="6"></div><div class="lbl">Mon</div></div>
-            <div class="cbar"><div class="col" data-h="85" data-v="9"></div><div class="lbl">Tue</div></div>
-            <div class="cbar"><div class="col alt" data-h="50" data-v="5"></div><div class="lbl">Wed</div></div>
-            <div class="cbar"><div class="col" data-h="100" data-v="11"></div><div class="lbl">Thu</div></div>
-            <div class="cbar"><div class="col alt" data-h="70" data-v="7"></div><div class="lbl">Fri</div></div>
-            <div class="cbar"><div class="col" data-h="40" data-v="4"></div><div class="lbl">Sat</div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PATIENTS -->
-    <section class="screen" id="dr-patients">
-      <div class="page-head"><div><h1>My patients</h1><p>Patients under your care.</p></div></div>
-      <div class="panel">
-        <table class="tbl"><thead><tr><th>Patient</th><th>Age</th><th>Condition</th><th>Last visit</th><th>Status</th><th></th></tr></thead><tbody>
-          <tr><td class="who"><div class="av">RS</div><div><div class="nm">Riya Sharma</div><div class="sub">PT-2041</div></div></td><td>32</td><td>Hypertension</td><td>12 May 2026</td><td><span class="badge b-confirmed">Active</span></td><td><button class="btn btn-ghost btn-sm" onclick="openConsult('Riya Sharma')">Open</button></td></tr>
-          <tr><td class="who"><div class="av">AM</div><div><div class="nm">Arun Mehta</div><div class="sub">PT-2088</div></div></td><td>45</td><td>Angina · under review</td><td>New</td><td><span class="badge b-pending">New</span></td><td><button class="btn btn-ghost btn-sm" onclick="openConsult('Arun Mehta')">Open</button></td></tr>
-          <tr><td class="who"><div class="av">PK</div><div><div class="nm">Priya Kulkarni</div><div class="sub">PT-1994</div></div></td><td>58</td><td>Post-op recovery</td><td>02 May 2026</td><td><span class="badge b-confirmed">Active</span></td><td><button class="btn btn-ghost btn-sm" onclick="openConsult('Priya Kulkarni')">Open</button></td></tr>
-          <tr><td class="who"><div class="av">SV</div><div><div class="nm">Sanjay Verma</div><div class="sub">PT-2101</div></div></td><td>39</td><td>Palpitations</td><td>New</td><td><span class="badge b-pending">New</span></td><td><button class="btn btn-ghost btn-sm" onclick="openConsult('Sanjay Verma')">Open</button></td></tr>
-        </tbody></table>
-      </div>
-    </section>
-
-    <!-- CONSULTATION -->
-    <section class="screen" id="dr-consult">
-      <div class="page-head"><div><h1>Consultation</h1><p>Active session · <b id="consultName" style="color:var(--text)">Riya Sharma</b></p></div><button class="btn btn-ghost btn-sm" onclick="drGo('dr-dash')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>Back</button></div>
-      <div class="consult-grid">
-        <div>
-          <div class="panel pt-card">
-            <div class="av" id="consultAv">RS</div>
-            <div class="nm" id="consultName2">Riya Sharma</div>
-            <div class="meta">32 · Female · O+ · PT-2041</div>
-            <div class="vitals">
-              <div class="vital"><div class="v">118/76</div><div class="k">BP</div></div>
-              <div class="vital"><div class="v">72</div><div class="k">Pulse</div></div>
-              <div class="vital"><div class="v">98.4°</div><div class="k">Temp</div></div>
-              <div class="vital"><div class="v">98%</div><div class="k">SpO₂</div></div>
-            </div>
-          </div>
-          <div class="panel">
-            <div class="panel-h"><h3>Patient history</h3></div>
-            <div class="hist-item"><div class="dot"></div><div><div class="t">Hypertension diagnosed</div><div class="d">12 May 2026 · Cardiology</div></div></div>
-            <div class="hist-item"><div class="dot"></div><div><div class="t">Routine check-up · Normal</div><div class="d">28 Apr 2026 · General Medicine</div></div></div>
-            <div class="hist-item"><div class="dot"></div><div><div class="t">Knee strain · resolved</div><div class="d">03 Apr 2026 · Orthopedics</div></div></div>
-          </div>
-        </div>
-        <div>
-          <div class="tabs"><button class="on" data-tab="ct-diag" onclick="consultTab('ct-diag',this)">Diagnosis</button><button data-tab="ct-rx" onclick="consultTab('ct-rx',this)">Prescription</button><button data-tab="ct-lab" onclick="consultTab('ct-lab',this)">Lab orders</button></div>
-          <div class="panel" id="ct-diag">
-            <div class="panel-h"><h3>Clinical notes & diagnosis</h3></div>
-            <div class="field"><label>Chief complaint</label><input value="Follow-up for blood pressure management" ></div>
-            <div class="field"><label>Examination findings</label><textarea rows="3">BP stable on current medication. No chest pain, no breathlessness. Cardiovascular exam unremarkable.</textarea></div>
-            <div class="field"><label>Diagnosis</label><input value="Essential hypertension — controlled"></div>
-            <button class="btn btn-ghost btn-sm" onclick="consultTab('ct-rx',document.querySelectorAll('.tabs button')[1])">Continue to prescription →</button>
-          </div>
-          <div class="panel" id="ct-rx" style="display:none">
-            <div class="panel-h"><h3>Prescription</h3><a onclick="addRx()">+ Add medicine</a></div>
-            <div id="rxList">
-              <div class="rx-row"><input value="Amlodipine 5mg"><input value="1-0-1"><input value="30 days"><button class="rx-del" onclick="this.parentElement.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg></button></div>
-              <div class="rx-row"><input value="Atorvastatin 10mg"><input value="0-0-1"><input value="30 days"><button class="rx-del" onclick="this.parentElement.remove()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg></button></div>
-            </div>
-            <button class="btn btn-primary btn-block" style="margin-top:16px" onclick="finishConsult()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Save & complete consultation</button>
-          </div>
-          <div class="panel" id="ct-lab" style="display:none">
-            <div class="panel-h"><h3>Order lab tests</h3></div>
-            <table class="tbl"><thead><tr><th>Test</th><th>Priority</th><th>Status</th></tr></thead><tbody>
-              <tr><td><b>Complete Blood Count</b></td><td>Routine</td><td><span class="badge b-completed-lab">Completed</span></td></tr>
-              <tr><td><b>Lipid Profile</b></td><td>Routine</td><td><span class="badge b-processing pulse">Processing</span></td></tr>
-              <tr><td><b>ECG</b></td><td>Urgent</td><td><span class="badge b-pending">Ordered</span></td></tr>
-            </tbody></table>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DOCTOR LAB -->
-    <section class="screen" id="dr-lab">
-      <div class="page-head"><div><h1>Lab reports</h1><p>Results awaiting your review.</p></div></div>
-      <div class="panel">
-        <table class="tbl"><thead><tr><th>Patient</th><th>Test</th><th>Ordered</th><th>Status</th><th></th></tr></thead><tbody>
-          <tr><td class="who"><div class="av">RS</div><div><div class="nm">Riya Sharma</div><div class="sub">PT-2041</div></div></td><td>Complete Blood Count</td><td>Today</td><td><span class="badge b-completed-lab">Completed</span></td><td><button class="btn btn-ghost btn-sm">Review</button></td></tr>
-          <tr><td class="who"><div class="av">AM</div><div><div class="nm">Arun Mehta</div><div class="sub">PT-2088</div></div></td><td>Troponin I</td><td>Today</td><td><span class="badge b-processing pulse">Processing</span></td><td></td></tr>
-          <tr><td class="who"><div class="av">SV</div><div><div class="nm">Sanjay Verma</div><div class="sub">PT-2101</div></div></td><td>ECG · Holter</td><td>Yesterday</td><td><span class="badge b-cancelled">Cancelled</span></td><td></td></tr>
-        </tbody></table>
-      </div>
-    </section>
-  </div>
- </div>
-</main>
-
-<!-- ============================================================= HOSPITAL ADMIN -->
-<main class="view" id="view-admin">
- <div class="portal">
-  <aside class="side" id="side-admin">
-    <div class="side-user"><div class="av">AD</div><div><div class="nm">Admin Console</div><div class="rl">Hospital management</div></div></div>
-    <div class="nav-lbl">Overview</div>
-    <div class="nav-item on" data-scr="ad-dash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="5" rx="2"/><rect x="13" y="10" width="8" height="11" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/></svg>Dashboard</div>
-    <div class="nav-item" data-scr="ad-ipd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M4 20v-8h16v8M6 12V8a2 2 0 0 1 2-2h3v6"/><circle cx="8" cy="9" r="1"/></svg>IPD & beds<span class="cnt">4</span></div>
-    <div class="nav-item" data-scr="ad-appts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Appointments</div>
-    <div class="nav-item" data-scr="ad-depts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V7l9-4 9 4v14"/><path d="M9 21v-6h6v6"/></svg>Departments</div>
-    <div class="nav-item" data-scr="ad-staff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Staff</div>
-    <div class="nav-item" data-scr="ad-billing"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Billing</div>
-    <button class="side-signout" onclick="signOut()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>Sign out</button>
-  </aside>
-  <div class="main">
-    <!-- ADMIN DASHBOARD -->
-    <section class="screen on" id="ad-dash">
-      <div class="page-head"><div><h1>Hospital dashboard</h1><p>Real-time operational overview.</p></div><div class="chip"><span class="badge b-available pulse" style="background:none;padding:0"></span>Live · updated just now</div></div>
-      <div class="stat-grid">
-        <div class="stat"><div class="tr up">+8%</div><div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><div class="v" data-count="1284">0</div><div class="k">Patients this month</div></div>
-        <div class="stat"><div class="tr up">+3%</div><div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><div class="v" data-count="342">0</div><div class="k">Appointments today</div></div>
-        <div class="stat"><div class="tr dn">-5%</div><div class="ic ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M4 20v-8h16v8M6 12V8a2 2 0 0 1 2-2h3v6"/></svg></div><div class="v"><span data-count="18">0</span>/64</div><div class="k">Beds available</div></div>
-        <div class="stat"><div class="tr up">+12%</div><div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="v">₹<span data-count="8.4">0</span>L</div><div class="k">Revenue this month</div></div>
-      </div>
-      <div class="grid-2">
-        <div class="panel"><div class="panel-h"><h3>Revenue trend</h3><span class="badge b-completed">Last 6 months</span></div>
-          <div class="chart-bars" id="adChart">
-            <div class="cbar"><div class="col" data-h="55" data-v="₹5.2L"></div><div class="lbl">Apr</div></div>
-            <div class="cbar"><div class="col" data-h="68" data-v="₹6.1L"></div><div class="lbl">May</div></div>
-            <div class="cbar"><div class="col" data-h="60" data-v="₹5.6L"></div><div class="lbl">Jun</div></div>
-            <div class="cbar"><div class="col" data-h="80" data-v="₹7.3L"></div><div class="lbl">Jul</div></div>
-            <div class="cbar"><div class="col" data-h="72" data-v="₹6.8L"></div><div class="lbl">Aug</div></div>
-            <div class="cbar"><div class="col" data-h="100" data-v="₹8.4L"></div><div class="lbl">Sep</div></div>
-          </div>
-        </div>
-        <div class="panel"><div class="panel-h"><h3>Appointment status</h3></div>
-          <div class="donut-wrap">
-            <svg class="donut" id="adDonut" viewBox="0 0 120 120">
-              <circle cx="60" cy="60" r="46" stroke="#e6f5ec" data-seg="62"></circle>
-              <circle cx="60" cy="60" r="46" stroke="#e9f1f8" data-seg="20"></circle>
-              <circle cx="60" cy="60" r="46" stroke="#fdf2df" data-seg="12"></circle>
-              <circle cx="60" cy="60" r="46" stroke="#fbe9e9" data-seg="6"></circle>
+        <div class="confirm card">
+          <div class="check-ring">
+            <svg viewBox="0 0 104 104">
+              <circle class="bg" cx="52" cy="52" r="48" />
+              <circle class="fg" cx="52" cy="52" r="48" />
             </svg>
-            <div class="legend">
-              <div class="li"><i style="background:#35A56B"></i>Confirmed <b>62%</b></div>
-              <div class="li"><i style="background:#1f5fa0"></i>Completed <b>20%</b></div>
-              <div class="li"><i style="background:#E9A23B"></i>Pending <b>12%</b></div>
-              <div class="li"><i style="background:#D64545"></i>Cancelled <b>6%</b></div>
+            <div class="tick"><svg viewBox="0 0 24 24">
+                <path d="M20 6 9 17l-5-5" />
+              </svg></div>
+          </div>
+          <h2>Appointment confirmed</h2>
+          <p>A confirmation has been sent to your mobile number. Please arrive 10 minutes early.</p>
+          <div class="rcpt" id="rcpt"></div>
+          <div style="display:flex;gap:12px"><button class="btn btn-ghost btn-block" onclick="webGo('home')">Back to
+              home</button><button class="btn btn-primary btn-block" onclick="viewInPortal()">View in portal</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="foot">
+      <div class="wrap foot-grid">
+        <div>
+          <div class="brand" style="margin-bottom:14px">
+            <div class="brand-mark"><img src="assets/img/logo-mark.png" alt="Astha+ Multispeciality Hospital logo">
             </div>
           </div>
-        </div>
-      </div>
-      <div class="panel"><div class="panel-h"><h3>Department overview</h3><a onclick="adGo('ad-depts')">View all</a></div>
-        <table class="tbl"><thead><tr><th>Department</th><th>Doctors</th><th>Today's appts</th><th>Beds</th><th>Occupancy</th></tr></thead><tbody>
-          <tr><td><b>Cardiology</b></td><td>6</td><td>48</td><td>12/16</td><td><span class="badge b-occupied">75%</span></td></tr>
-          <tr><td><b>Orthopedics</b></td><td>5</td><td>36</td><td>9/14</td><td><span class="badge b-pending">64%</span></td></tr>
-          <tr><td><b>General Medicine</b></td><td>8</td><td>72</td><td>15/20</td><td><span class="badge b-occupied">75%</span></td></tr>
-          <tr><td><b>Pediatrics</b></td><td>4</td><td>40</td><td>6/14</td><td><span class="badge b-available">43%</span></td></tr>
-        </tbody></table>
-      </div>
-    </section>
-
-    <!-- IPD & BEDS -->
-    <section class="screen" id="ad-ipd">
-      <div class="page-head"><div><h1>IPD & bed management</h1><p>In-patient admissions and live bed availability.</p></div></div>
-      <div class="stat-grid" style="grid-template-columns:repeat(4,1fr)">
-        <div class="stat"><div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M4 20v-8h16v8"/></svg></div><div class="v" data-count="18">0</div><div class="k">Available</div></div>
-        <div class="stat"><div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><div class="v" data-count="38">0</div><div class="k">Occupied</div></div>
-        <div class="stat"><div class="ic" style="background:#efeafb;color:#7a5bbd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 3v9h9"/></svg></div><div class="v" data-count="4">0</div><div class="k">Cleaning</div></div>
-        <div class="stat"><div class="ic ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/></svg></div><div class="v" data-count="4">0</div><div class="k">Reserved</div></div>
-      </div>
-      <div class="grid-2">
-        <div class="panel"><div class="panel-h"><h3>Ward — General (Floor 2)</h3><span id="bedHint" style="font-size:13px;color:var(--muted)">Select an available bed to assign</span></div>
-          <div class="bed-legend">
-            <div class="bl"><i style="background:#e6f5ec"></i>Available</div>
-            <div class="bl"><i style="background:#e9f1f8"></i>Occupied</div>
-            <div class="bl"><i style="background:#efeafb"></i>Cleaning</div>
-            <div class="bl"><i style="background:#fdf2df"></i>Reserved</div>
-          </div>
-          <div class="bed-grid" id="bedGrid"></div>
+          <p style="font-size:13.5px;max-width:34ch">Trusted multispeciality care with modern diagnostics and 24×7
+            emergency services.</p>
         </div>
         <div>
-          <div class="panel"><div class="panel-h"><h3>Awaiting admission</h3></div>
-            <div class="appt-list" id="admitList">
-              <div class="appt"><div class="av">NP</div><div class="info"><div class="nm">Nikhil Patel</div><div class="sub">Cardiology · Dr. [Cardiology]</div></div><button class="btn btn-primary btn-sm" onclick="selectAdmit(this,'Nikhil Patel')">Assign bed</button></div>
-              <div class="appt"><div class="av">MK</div><div class="info"><div class="nm">Meena Kumari</div><div class="sub">General Medicine · observation</div></div><button class="btn btn-ghost btn-sm" onclick="selectAdmit(this,'Meena Kumari')">Assign bed</button></div>
-              <div class="appt"><div class="av">RT</div><div class="info"><div class="nm">Ravi Thakkar</div><div class="sub">Orthopedics · post-op</div></div><button class="btn btn-ghost btn-sm" onclick="selectAdmit(this,'Ravi Thakkar')">Assign bed</button></div>
+          <h5>Care</h5><a>Departments</a><a>Our doctors</a><a>Book appointment</a><a>Health packages</a>
+        </div>
+        <div>
+          <h5>Patients</h5><a>Patient portal</a><a>Lab reports</a><a>Billing</a><a>Insurance</a>
+        </div>
+        <div>
+          <h5>Contact</h5><a>Emergency: [placeholder]</a><a>Reception: [placeholder]</a><a>[Hospital
+            address]</a><a>[City, State]</a>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="cr">© Astha Multispeciality Hospital — prototype for demonstration. All details shown are
+          placeholders. &nbsp;·&nbsp; <a href="https://www.sangaminfoanalytics.online/" target="_blank"
+            rel="noopener noreferrer"
+            style="color:#fff;text-decoration:underline;cursor:pointer;font-weight:600">Designed &amp; developed by
+            Sangam InfoAnalytics</a></div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- ============================================================= PATIENT PORTAL -->
+  <main class="view" id="view-patient">
+    <div class="portal">
+      <aside class="side" id="side-patient">
+        <div class="side-user">
+          <div class="av">RS</div>
+          <div>
+            <div class="nm">Riya Sharma</div>
+            <div class="rl">Patient · ID PT-2041</div>
+          </div>
+        </div>
+        <div class="nav-lbl">Menu</div>
+        <div class="nav-item on" data-scr="pt-dash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <rect x="3" y="3" width="8" height="8" rx="2" />
+            <rect x="13" y="3" width="8" height="5" rx="2" />
+            <rect x="13" y="10" width="8" height="11" rx="2" />
+            <rect x="3" y="13" width="8" height="8" rx="2" />
+          </svg>Dashboard</div>
+        <div class="nav-item" data-scr="pt-appts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" />
+            <path d="M16 2v4M8 2v4M3 10h18" />
+          </svg>Appointments</div>
+        <div class="nav-item" data-scr="pt-records"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+            <path d="M14 3v6h6" />
+          </svg>Medical records</div>
+        <div class="nav-item" data-scr="pt-lab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M9 3v6l-5 8a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-8V3" />
+            <path d="M8 3h8" />
+          </svg>Lab reports</div>
+        <div class="nav-item" data-scr="pt-rx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M5 8h9a4 4 0 0 1 0 8h-4l4 4M5 8v12M5 8V4h5" />
+          </svg>Prescriptions</div>
+        <div class="nav-item" data-scr="pt-billing"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <rect x="2" y="5" width="20" height="14" rx="2" />
+            <path d="M2 10h20" />
+          </svg>Billing</div>
+        <div class="nav-lbl">Account</div>
+        <div class="nav-item" data-scr="pt-profile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 21c0-4 4-6 8-6s8 2 8 6" />
+          </svg>Profile</div>
+        <button class="side-signout" onclick="signOut()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+            <path d="M16 17l5-5-5-5M21 12H9" />
+          </svg>Sign out</button>
+      </aside>
+      <div class="main">
+        <!-- DASHBOARD -->
+        <section class="screen on" id="pt-dash">
+          <div class="page-head">
+            <div>
+              <h1>Good morning, Riya 👋</h1>
+              <p>Here's a summary of your health and upcoming care.</p>
+            </div>
+            <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+                <path d="M13.7 21a2 2 0 0 1-3.4 0" />
+              </svg>3 updates</div>
+          </div>
+          <div class="stat-grid">
+            <div class="stat">
+              <div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg></div>
+              <div class="v" data-count="2">0</div>
+              <div class="k">Upcoming appointments</div>
+            </div>
+            <div class="stat">
+              <div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+                  <path d="M14 3v6h6" />
+                </svg></div>
+              <div class="v" data-count="12">0</div>
+              <div class="k">Medical records</div>
+            </div>
+            <div class="stat">
+              <div class="ic ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 3v6l-5 8a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-8V3" />
+                </svg></div>
+              <div class="v"><span data-count="1">0</span> new</div>
+              <div class="k">Lab report pending</div>
+            </div>
+            <div class="stat">
+              <div class="ic ic-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="5" width="20" height="14" rx="2" />
+                  <path d="M2 10h20" />
+                </svg></div>
+              <div class="v">₹<span data-count="1450">0</span></div>
+              <div class="k">Outstanding balance</div>
             </div>
           </div>
-          <div class="panel" id="assignPanel" style="display:none">
-            <div class="panel-h"><h3>Assign bed</h3></div>
-            <div class="mini-row" style="background:var(--blue-050);margin-bottom:12px"><span class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span> Patient <b id="assignPt" style="margin-left:auto">—</b></div>
-            <div class="mini-row" style="background:var(--green-050);margin-bottom:16px"><span class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M4 20v-8h16v8"/></svg></span> Selected bed <b id="assignBed" style="margin-left:auto">None</b></div>
-            <button class="btn btn-primary btn-block" id="assignBtn" onclick="confirmAssign()" disabled style="opacity:.5">Confirm admission</button>
+          <div class="grid-2">
+            <div>
+              <div class="panel">
+                <div class="panel-h">
+                  <h3>Upcoming appointments</h3><a onclick="ptGo('pt-appts')">View all</a>
+                </div>
+                <div class="appt-list" id="ptDashUpcoming">
+                  <div class="appt">
+                    <div class="tm">
+                      <div class="h">10:30</div>
+                      <div class="m">AM</div>
+                    </div>
+                    <div class="sep"></div>
+                    <div class="av">C</div>
+                    <div class="info">
+                      <div class="nm">Dr. [Cardiology]</div>
+                      <div class="sub">Cardiology · Follow-up consultation</div>
+                    </div><span class="badge b-confirmed">Confirmed</span>
+                  </div>
+                  <div class="appt">
+                    <div class="tm">
+                      <div class="h">04:00</div>
+                      <div class="m">PM</div>
+                    </div>
+                    <div class="sep"></div>
+                    <div class="av">D</div>
+                    <div class="info">
+                      <div class="nm">Dr. [Dermatology]</div>
+                      <div class="sub">Dermatology · New consultation</div>
+                    </div><span class="badge b-pending pulse">Pending</span>
+                  </div>
+                </div>
+              </div>
+              <div class="panel">
+                <div class="panel-h">
+                  <h3>Active prescriptions</h3><a onclick="ptGo('pt-rx')">Manage</a>
+                </div>
+                <table class="tbl">
+                  <thead>
+                    <tr>
+                      <th>Medicine</th>
+                      <th>Dosage</th>
+                      <th>Duration</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><b>Amlodipine 5mg</b></td>
+                      <td>1-0-1</td>
+                      <td>30 days</td>
+                      <td><span class="badge b-confirmed">Ongoing</span></td>
+                    </tr>
+                    <tr>
+                      <td><b>Atorvastatin 10mg</b></td>
+                      <td>0-0-1</td>
+                      <td>30 days</td>
+                      <td><span class="badge b-confirmed">Ongoing</span></td>
+                    </tr>
+                    <tr>
+                      <td><b>Vitamin D3</b></td>
+                      <td>Weekly</td>
+                      <td>8 weeks</td>
+                      <td><span class="badge b-completed">Completed</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div>
+              <div class="panel">
+                <div class="panel-h">
+                  <h3>Health snapshot</h3>
+                </div>
+                <div class="vitals" style="grid-template-columns:1fr 1fr">
+                  <div class="vital">
+                    <div class="v">118/76</div>
+                    <div class="k">Blood pressure</div>
+                  </div>
+                  <div class="vital">
+                    <div class="v">72 bpm</div>
+                    <div class="k">Heart rate</div>
+                  </div>
+                  <div class="vital">
+                    <div class="v">98.4°F</div>
+                    <div class="k">Temperature</div>
+                  </div>
+                  <div class="vital">
+                    <div class="v">64 kg</div>
+                    <div class="k">Weight</div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel">
+                <div class="panel-h">
+                  <h3>Notifications</h3>
+                </div>
+                <div class="hist-item">
+                  <div class="dot"></div>
+                  <div>
+                    <div class="t">Lab report ready</div>
+                    <div class="d">Complete Blood Count · 2h ago</div>
+                  </div>
+                </div>
+                <div class="hist-item">
+                  <div class="dot" style="background:var(--warning);box-shadow:0 0 0 4px #fdf2df"></div>
+                  <div>
+                    <div class="t">Appointment reminder</div>
+                    <div class="d">Cardiology tomorrow, 10:30 AM</div>
+                  </div>
+                </div>
+                <div class="hist-item">
+                  <div class="dot" style="background:var(--blue);box-shadow:0 0 0 4px var(--blue-050)"></div>
+                  <div>
+                    <div class="t">Payment due</div>
+                    <div class="d">₹1,450 pending · Invoice INV-882</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- ADMIN APPOINTMENTS -->
-    <section class="screen" id="ad-appts">
-      <div class="page-head"><div><h1>Appointments</h1><p>Hospital-wide scheduling analytics.</p></div></div>
-      <div class="panel">
-        <table class="tbl"><thead><tr><th>Patient</th><th>Doctor</th><th>Department</th><th>Time</th><th>Status</th></tr></thead><tbody>
-          <tr><td class="who"><div class="av">RS</div><div class="nm">Riya Sharma</div></td><td>Dr. [Cardiology]</td><td>Cardiology</td><td>10:30 AM</td><td><span class="badge b-confirmed">Confirmed</span></td></tr>
-          <tr><td class="who"><div class="av">AM</div><div class="nm">Arun Mehta</div></td><td>Dr. [Cardiology]</td><td>Cardiology</td><td>10:45 AM</td><td><span class="badge b-pending pulse">Pending</span></td></tr>
-          <tr><td class="who"><div class="av">SD</div><div class="nm">Sneha Desai</div></td><td>Dr. [Dermatology]</td><td>Dermatology</td><td>11:00 AM</td><td><span class="badge b-confirmed">Confirmed</span></td></tr>
-          <tr><td class="who"><div class="av">VP</div><div class="nm">Vikram Patel</div></td><td>Dr. [Orthopedics]</td><td>Orthopedics</td><td>11:30 AM</td><td><span class="badge b-completed">Completed</span></td></tr>
-          <tr><td class="who"><div class="av">AN</div><div class="nm">Anita Nair</div></td><td>Dr. [ENT]</td><td>ENT</td><td>12:00 PM</td><td><span class="badge b-cancelled">Cancelled</span></td></tr>
-        </tbody></table>
-      </div>
-    </section>
-
-    <!-- ADMIN DEPARTMENTS -->
-    <section class="screen" id="ad-depts">
-      <div class="page-head"><div><h1>Departments</h1><p>Capacity and staffing across specialities.</p></div></div>
-      <div class="rec-grid" id="adDeptGrid"></div>
-    </section>
-
-    <!-- ADMIN STAFF -->
-    <section class="screen" id="ad-staff">
-      <div class="page-head">
-        <div><h1>Staff</h1><p>Directory of doctors, nurses and support staff.</p></div>
-        <button class="btn btn-primary" onclick="openStaff()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Add staff</button>
-      </div>
-      <div class="stat-grid" style="grid-template-columns:repeat(4,1fr);margin-bottom:22px">
-        <div class="stat"><div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div><div class="v" id="stTotal" data-count="0">0</div><div class="k">Total staff</div></div>
-        <div class="stat"><div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4M16 2v4M4 8h16M12 12v5M9.5 14.5h5"/><rect x="4" y="4" width="16" height="17" rx="2"/></svg></div><div class="v" id="stDoc" data-count="0">0</div><div class="k">Doctors</div></div>
-        <div class="stat"><div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 0 0-5 5v3a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5zM6 21v-2a6 6 0 0 1 12 0v2"/></svg></div><div class="v" id="stNurse" data-count="0">0</div><div class="k">Nurses &amp; support</div></div>
-        <div class="stat"><div class="ic ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div class="v" id="stLeave" data-count="0">0</div><div class="k">On leave</div></div>
-      </div>
-      <div class="panel">
-        <table class="tbl">
-          <thead><tr><th>Name</th><th>Role</th><th>Department</th><th>Shift</th><th>Status</th><th></th></tr></thead>
-          <tbody id="staffBody"></tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- ADMIN BILLING -->
-    <section class="screen" id="ad-billing">
-      <div class="page-head"><div><h1>Billing</h1><p>Revenue, invoices and collections.</p></div></div>
-      <div class="stat-grid" style="grid-template-columns:repeat(3,1fr)">
-        <div class="stat"><div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="v">₹<span data-count="8.4">0</span>L</div><div class="k">Collected (Sep)</div></div>
-        <div class="stat"><div class="ic ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></div><div class="v">₹<span data-count="1.2">0</span>L</div><div class="k">Pending dues</div></div>
-        <div class="stat"><div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div><div class="v" data-count="486">0</div><div class="k">Invoices raised</div></div>
-      </div>
-      <div class="panel">
-        <table class="tbl"><thead><tr><th>Invoice</th><th>Patient</th><th>Department</th><th>Amount</th><th>Status</th></tr></thead><tbody>
-          <tr><td><b>INV-1042</b></td><td>Riya Sharma</td><td>Cardiology</td><td>₹1,450</td><td><span class="badge b-pending">Due</span></td></tr>
-          <tr><td><b>INV-1041</b></td><td>Vikram Patel</td><td>Orthopedics</td><td>₹12,800</td><td><span class="badge b-completed-lab">Paid</span></td></tr>
-          <tr><td><b>INV-1040</b></td><td>Nikhil Patel</td><td>Cardiology · IPD</td><td>₹34,500</td><td><span class="badge b-processing pulse">Processing</span></td></tr>
-          <tr><td><b>INV-1039</b></td><td>Sneha Desai</td><td>Dermatology</td><td>₹900</td><td><span class="badge b-completed-lab">Paid</span></td></tr>
-        </tbody></table>
-      </div>
-    </section>
-  </div>
- </div>
-</main>
-
-<!-- ============================================================= STAFF PANEL -->
-<main class="view" id="view-staff">
- <div class="portal">
-  <aside class="side" id="side-staff">
-    <div class="side-user"><div class="av">KR</div><div><div class="nm">Kavita Rao</div><div class="rl">Front Desk · Receptionist</div></div></div>
-    <div class="nav-lbl">Operations</div>
-    <div class="nav-item on" data-scr="st-dash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="5" rx="2"/><rect x="13" y="10" width="8" height="11" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/></svg>Dashboard</div>
-    <div class="nav-item" data-scr="st-checkin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="3" width="8" height="4" rx="1"/><path d="M8 5H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><path d="m9 14 2 2 4-4"/></svg>Front desk<span class="cnt">7</span></div>
-    <div class="nav-item" data-scr="st-register"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M3 21c0-3.5 3-5.5 6-5.5s6 2 6 5.5"/><path d="M17 7h4M19 5v4"/></svg>Register walk-in</div>
-    <div class="nav-item" data-scr="st-queue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>Token queue</div>
-    <div class="nav-lbl">Wards</div>
-    <div class="nav-item" data-scr="st-nursing"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M4 20v-8h16v8M6 12V8a2 2 0 0 1 2-2h3v6"/><circle cx="8" cy="9" r="1"/></svg>Nursing station<span class="cnt">5</span></div>
-    <button class="side-signout" onclick="signOut()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>Sign out</button>
-  </aside>
-  <div class="main">
-
-    <!-- STAFF DASHBOARD -->
-    <section class="screen on" id="st-dash">
-      <div class="page-head"><div><h1>Front desk</h1><p class="hi">Saturday, 14 September · Shift 9:00 AM – 5:00 PM</p></div><div class="chip"><span class="badge b-available" style="background:none;padding:0">Available</span> On duty</div></div>
-      <div class="stat-grid">
-        <div class="stat"><div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v4a4 4 0 0 0 8 0V3"/><path d="m9 14 2 2 4-4"/><rect x="4" y="7" width="16" height="14" rx="2"/></svg></div><div class="v" data-count="46">0</div><div class="k">Check-ins today</div></div>
-        <div class="stat"><div class="ic ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/></svg></div><div class="v" data-count="7">0</div><div class="k">Waiting in lobby</div></div>
-        <div class="stat"><div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M3 21c0-3.5 3-5.5 6-5.5s6 2 6 5.5"/><path d="M17 7h4M19 5v4"/></svg></div><div class="v" data-count="12">0</div><div class="k">Walk-ins registered</div></div>
-        <div class="stat"><div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4z"/><path d="M14 6v12"/></svg></div><div class="v" data-count="38">0</div><div class="k">Tokens issued</div></div>
-      </div>
-      <div class="grid-2">
-        <div class="panel"><div class="panel-h"><h3>Lobby queue</h3><a onclick="stGo('st-queue')">Open board</a></div>
-          <div class="appt-list">
-            <div class="appt"><div class="tm"><div class="h">A-08</div><div class="m">Token</div></div><div class="sep"></div><div class="av">RS</div><div class="info"><div class="nm">Rohit Sharma</div><div class="sub">Cardiology · Dr. [Cardiology]</div></div><span class="badge b-processing pulse">In consult</span></div>
-            <div class="appt"><div class="tm"><div class="h">A-11</div><div class="m">Token</div></div><div class="sep"></div><div class="av">AD</div><div class="info"><div class="nm">Anjali Desai</div><div class="sub">Dermatology · New visit</div></div><span class="badge b-confirmed">Checked in</span></div>
-            <div class="appt"><div class="tm"><div class="h">A-12</div><div class="m">Token</div></div><div class="sep"></div><div class="av">IS</div><div class="info"><div class="nm">Imran Shaikh</div><div class="sub">Orthopedics · Follow-up</div></div><span class="badge b-pending pulse">Waiting</span></div>
-            <div class="appt"><div class="tm"><div class="h">A-13</div><div class="m">Token</div></div><div class="sep"></div><div class="av">NP</div><div class="info"><div class="nm">Neha Patel</div><div class="sub">General Medicine · New visit</div></div><span class="badge b-pending pulse">Waiting</span></div>
-          </div>
-        </div>
-        <div class="panel"><div class="panel-h"><h3>Footfall today</h3></div>
-          <div class="chart-bars" id="stChart">
-            <div class="cbar"><div class="col" data-h="55" data-v="11"></div><div class="lbl">9a</div></div>
-            <div class="cbar"><div class="col" data-h="85" data-v="17"></div><div class="lbl">10a</div></div>
-            <div class="cbar"><div class="col alt" data-h="70" data-v="14"></div><div class="lbl">11a</div></div>
-            <div class="cbar"><div class="col" data-h="100" data-v="20"></div><div class="lbl">12p</div></div>
-            <div class="cbar"><div class="col alt" data-h="45" data-v="9"></div><div class="lbl">1p</div></div>
-            <div class="cbar"><div class="col" data-h="60" data-v="12"></div><div class="lbl">2p</div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FRONT DESK / CHECK-IN -->
-    <section class="screen" id="st-checkin">
-      <div class="page-head"><div><h1>Front desk — check-in</h1><p>Today's scheduled appointments. Check patients in and issue a token.</p></div><button class="btn btn-primary btn-sm" onclick="stGo('st-register')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Register walk-in</button></div>
-      <div class="panel">
-        <table class="tbl"><thead><tr><th>Time</th><th>Patient</th><th>Department</th><th>Doctor</th><th>Token</th><th>Status</th><th></th></tr></thead><tbody>
-          <tr><td>10:30 AM</td><td class="who"><div class="av">RS</div><div><div class="nm">Riya Sharma</div><div class="sub">PT-2041</div></div></td><td>Cardiology</td><td>Dr. [Cardiology]</td><td class="tok">A-06</td><td class="st"><span class="badge b-confirmed">Checked in</span></td><td></td></tr>
-          <tr><td>10:45 AM</td><td class="who"><div class="av">AM</div><div><div class="nm">Arun Mehta</div><div class="sub">PT-2088</div></div></td><td>Cardiology</td><td>Dr. [Cardiology]</td><td class="tok">—</td><td class="st"><span class="badge b-pending pulse">Arrived</span></td><td><button class="btn btn-primary btn-sm" data-tok="A-14" onclick="checkIn(this)">Check in</button></td></tr>
-          <tr><td>11:00 AM</td><td class="who"><div class="av">PK</div><div><div class="nm">Priya Kulkarni</div><div class="sub">PT-1994</div></div></td><td>Orthopedics</td><td>Dr. [Orthopedics]</td><td class="tok">—</td><td class="st"><span class="badge b-pending pulse">Arrived</span></td><td><button class="btn btn-primary btn-sm" data-tok="A-15" onclick="checkIn(this)">Check in</button></td></tr>
-          <tr><td>11:15 AM</td><td class="who"><div class="av">SV</div><div><div class="nm">Sanjay Verma</div><div class="sub">PT-2101</div></div></td><td>General Medicine</td><td>Dr. [General]</td><td class="tok">—</td><td class="st"><span class="badge b-cancelled">Not arrived</span></td><td><button class="btn btn-primary btn-sm" data-tok="A-16" onclick="checkIn(this)">Check in</button></td></tr>
-          <tr><td>11:30 AM</td><td class="who"><div class="av">MK</div><div><div class="nm">Meena Kumari</div><div class="sub">PT-2120</div></div></td><td>Dermatology</td><td>Dr. [Dermatology]</td><td class="tok">—</td><td class="st"><span class="badge b-pending pulse">Arrived</span></td><td><button class="btn btn-primary btn-sm" data-tok="A-17" onclick="checkIn(this)">Check in</button></td></tr>
-        </tbody></table>
-      </div>
-    </section>
-
-    <!-- REGISTER WALK-IN -->
-    <section class="screen" id="st-register">
-      <div class="page-head"><div><h1>Register walk-in patient</h1><p>Create a quick registration and issue a queue token.</p></div></div>
-      <div class="grid-2">
-        <div class="panel">
-          <div class="panel-h"><h3>Patient details</h3></div>
-          <div class="field"><label>Full name</label><input id="rwName" placeholder="e.g. Ramesh Bhai"></div>
-          <div class="form-2">
-            <div class="field"><label>Age</label><input id="rwAge" placeholder="e.g. 42"></div>
-            <div class="field"><label>Gender</label><select id="rwGender"><option>Female</option><option>Male</option><option>Other</option></select></div>
-            <div class="field"><label>Phone</label><input id="rwPhone" placeholder="[phone]"></div>
-            <div class="field"><label>Department</label><select id="rwDept"><option>Cardiology</option><option>Orthopedics</option><option>Neurology</option><option>Pediatrics</option><option>Dermatology</option><option>ENT</option><option>General Medicine</option><option>Gynecology</option></select></div>
-          </div>
-          <div class="field"><label>Reason for visit</label><input id="rwReason" placeholder="e.g. Fever and body ache"></div>
-          <button class="btn btn-primary btn-block" onclick="registerWalkin()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4z"/></svg>Register &amp; issue token</button>
-        </div>
-        <div>
-          <div class="panel" style="text-align:center">
-            <div class="panel-h" style="justify-content:center"><h3>Token issued</h3></div>
-            <div style="font-size:48px;font-weight:800;color:var(--blue);letter-spacing:1px;margin:6px 0" id="rwToken">—</div>
-            <p style="color:var(--muted);font-size:14px;margin-top:2px">Hand this token to the patient and direct them to the waiting area.</p>
+        <!-- APPOINTMENTS -->
+        <section class="screen" id="pt-appts">
+          <div class="page-head">
+            <div>
+              <h1>Appointments</h1>
+              <p>Your scheduled and past visits.</p>
+            </div><button class="btn btn-primary btn-sm" onclick="switchView('web');startBooking()"><svg
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12h14" />
+              </svg>New appointment</button>
           </div>
           <div class="panel">
-            <div class="panel-h"><h3>How it works</h3></div>
-            <div class="hist-item"><div class="dot"></div><div><div class="t">Fill in the patient's basic details</div><div class="d">Name and department are required</div></div></div>
-            <div class="hist-item"><div class="dot"></div><div><div class="t">A token is generated automatically</div><div class="d">Added to the live queue board</div></div></div>
-            <div class="hist-item"><div class="dot"></div><div><div class="t">Patient is called by token</div><div class="d">From the token queue screen</div></div></div>
+            <div class="panel-h">
+              <h3>Upcoming</h3>
+            </div>
+            <div class="appt-list" id="ptApptUpcoming">
+              <div class="appt">
+                <div class="tm">
+                  <div class="h">10:30</div>
+                  <div class="m">AM · Tmrw</div>
+                </div>
+                <div class="sep"></div>
+                <div class="av">C</div>
+                <div class="info">
+                  <div class="nm">Dr. [Cardiology]</div>
+                  <div class="sub">Cardiology · Room 204</div>
+                </div><span class="badge b-confirmed">Confirmed</span>
+              </div>
+              <div class="appt">
+                <div class="tm">
+                  <div class="h">04:00</div>
+                  <div class="m">PM · Fri</div>
+                </div>
+                <div class="sep"></div>
+                <div class="av">D</div>
+                <div class="info">
+                  <div class="nm">Dr. [Dermatology]</div>
+                  <div class="sub">Dermatology · Room 118</div>
+                </div><span class="badge b-pending pulse">Pending</span>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-h">
+              <h3>Past visits</h3>
+            </div>
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th>Doctor</th>
+                  <th>Department</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="who">
+                    <div class="av">O</div>
+                    <div>
+                      <div class="nm">Dr. [Orthopedics]</div>
+                      <div class="sub">Consultant</div>
+                    </div>
+                  </td>
+                  <td>Orthopedics</td>
+                  <td>12 May 2026</td>
+                  <td><span class="badge b-completed">Completed</span></td>
+                </tr>
+                <tr>
+                  <td class="who">
+                    <div class="av">G</div>
+                    <div>
+                      <div class="nm">Dr. [General]</div>
+                      <div class="sub">Physician</div>
+                    </div>
+                  </td>
+                  <td>General Medicine</td>
+                  <td>28 Apr 2026</td>
+                  <td><span class="badge b-completed">Completed</span></td>
+                </tr>
+                <tr>
+                  <td class="who">
+                    <div class="av">E</div>
+                    <div>
+                      <div class="nm">Dr. [ENT]</div>
+                      <div class="sub">Consultant</div>
+                    </div>
+                  </td>
+                  <td>ENT</td>
+                  <td>03 Apr 2026</td>
+                  <td><span class="badge b-cancelled">Cancelled</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- RECORDS -->
+        <section class="screen" id="pt-records">
+          <div class="page-head">
+            <div>
+              <h1>Medical records</h1>
+              <p>Consultations, diagnoses and discharge summaries.</p>
+            </div>
+          </div>
+          <div class="rec-grid">
+            <div class="rec">
+              <div class="top">
+                <div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M12 21s-7-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3.2 1.2 4 2.3C10.8 6.2 12 5 14 5c3.5 0 5 4 3.5 7-2.5 4.5-9.5 9-5.5 9z" />
+                  </svg></div>
+                <div>
+                  <div class="t">Cardiology consult</div>
+                  <div class="d">Dr. [Cardiology]</div>
+                </div>
+              </div>
+              <div class="row"><span>Date</span><b>12 May 2026</b></div>
+              <div class="row"><span>Diagnosis</span><b>Hypertension</b></div><button
+                class="btn btn-ghost btn-sm btn-block" style="margin-top:14px">View record</button>
+            </div>
+            <div class="rec">
+              <div class="top">
+                <div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M8 3v4a4 4 0 0 0 8 0V3" />
+                    <path d="M6 21v-3a6 6 0 0 1 12 0v3" />
+                  </svg></div>
+                <div>
+                  <div class="t">General check-up</div>
+                  <div class="d">Dr. [General]</div>
+                </div>
+              </div>
+              <div class="row"><span>Date</span><b>28 Apr 2026</b></div>
+              <div class="row"><span>Diagnosis</span><b>Routine · Normal</b></div><button
+                class="btn btn-ghost btn-sm btn-block" style="margin-top:14px">View record</button>
+            </div>
+            <div class="rec">
+              <div class="top">
+                <div class="ic ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 3v6a3 3 0 0 0 6 0V3" />
+                    <path d="M9 15v6" />
+                  </svg></div>
+                <div>
+                  <div class="t">Orthopedic review</div>
+                  <div class="d">Dr. [Orthopedics]</div>
+                </div>
+              </div>
+              <div class="row"><span>Date</span><b>03 Apr 2026</b></div>
+              <div class="row"><span>Diagnosis</span><b>Knee strain</b></div><button
+                class="btn btn-ghost btn-sm btn-block" style="margin-top:14px">View record</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- LAB -->
+        <section class="screen" id="pt-lab">
+          <div class="page-head">
+            <div>
+              <h1>Lab reports</h1>
+              <p>Diagnostic results and pathology.</p>
+            </div>
+          </div>
+          <div class="rec-grid">
+            <div class="rec">
+              <div class="top">
+                <div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 3v6l-5 8a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-8V3" />
+                  </svg></div>
+                <div>
+                  <div class="t">Complete Blood Count</div>
+                  <div class="d">Pathology</div>
+                </div>
+              </div>
+              <div class="row"><span>Collected</span><b>Today</b></div>
+              <div class="row"><span>Status</span><span class="badge b-completed-lab">Completed</span></div><button
+                class="btn btn-primary btn-sm btn-block" style="margin-top:14px">Download report</button>
+            </div>
+            <div class="rec">
+              <div class="top">
+                <div class="ic ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 3v6l-5 8a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-8V3" />
+                  </svg></div>
+                <div>
+                  <div class="t">Lipid Profile</div>
+                  <div class="d">Biochemistry</div>
+                </div>
+              </div>
+              <div class="row"><span>Collected</span><b>Today</b></div>
+              <div class="row"><span>Status</span><span class="badge b-processing pulse">Processing</span></div><button
+                class="btn btn-ghost btn-sm btn-block" style="margin-top:14px" disabled>Awaiting results</button>
+            </div>
+            <div class="rec">
+              <div class="top">
+                <div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 3v6l-5 8a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-8V3" />
+                  </svg></div>
+                <div>
+                  <div class="t">Thyroid Panel</div>
+                  <div class="d">Endocrinology</div>
+                </div>
+              </div>
+              <div class="row"><span>Collected</span><b>08 May 2026</b></div>
+              <div class="row"><span>Status</span><span class="badge b-completed-lab">Completed</span></div><button
+                class="btn btn-primary btn-sm btn-block" style="margin-top:14px">Download report</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- PRESCRIPTIONS -->
+        <section class="screen" id="pt-rx">
+          <div class="page-head">
+            <div>
+              <h1>Prescriptions</h1>
+              <p>Current and past medication plans.</p>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-h">
+              <h3>Current medication</h3><span class="badge b-confirmed">Active plan</span>
+            </div>
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th>Medicine</th>
+                  <th>Dosage</th>
+                  <th>Timing</th>
+                  <th>Duration</th>
+                  <th>Prescribed by</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><b>Amlodipine 5mg</b></td>
+                  <td>1-0-1</td>
+                  <td>After food</td>
+                  <td>30 days</td>
+                  <td>Dr. [Cardiology]</td>
+                </tr>
+                <tr>
+                  <td><b>Atorvastatin 10mg</b></td>
+                  <td>0-0-1</td>
+                  <td>Bedtime</td>
+                  <td>30 days</td>
+                  <td>Dr. [Cardiology]</td>
+                </tr>
+                <tr>
+                  <td><b>Vitamin D3 60k</b></td>
+                  <td>Weekly</td>
+                  <td>After food</td>
+                  <td>8 weeks</td>
+                  <td>Dr. [General]</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- BILLING -->
+        <section class="screen" id="pt-billing">
+          <div class="page-head">
+            <div>
+              <h1>Billing & payments</h1>
+              <p>Invoices, payments and insurance.</p>
+            </div>
+          </div>
+          <div class="stat-grid" style="grid-template-columns:repeat(3,1fr)">
+            <div class="stat">
+              <div class="ic ic-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg></div>
+              <div class="v">₹<span data-count="1450">0</span></div>
+              <div class="k">Outstanding</div>
+            </div>
+            <div class="stat">
+              <div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg></div>
+              <div class="v">₹<span data-count="28600">0</span></div>
+              <div class="k">Paid this year</div>
+            </div>
+            <div class="stat">
+              <div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2a10 10 0 1 0 10 10" />
+                  <path d="M12 6v6l4 2" />
+                </svg></div>
+              <div class="v" data-count="6">0</div>
+              <div class="k">Total invoices</div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-h">
+              <h3>Invoices</h3>
+            </div>
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th>Invoice</th>
+                  <th>For</th>
+                  <th>Date</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><b>INV-882</b></td>
+                  <td>Cardiology consult</td>
+                  <td>12 May 2026</td>
+                  <td>₹1,450</td>
+                  <td><span class="badge b-pending">Due</span></td>
+                  <td><button class="btn btn-primary btn-sm">Pay now</button></td>
+                </tr>
+                <tr>
+                  <td><b>INV-861</b></td>
+                  <td>Lab · CBC + Lipid</td>
+                  <td>08 May 2026</td>
+                  <td>₹2,100</td>
+                  <td><span class="badge b-completed-lab">Paid</span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><b>INV-844</b></td>
+                  <td>General check-up</td>
+                  <td>28 Apr 2026</td>
+                  <td>₹800</td>
+                  <td><span class="badge b-completed-lab">Paid</span></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- PROFILE -->
+        <section class="screen" id="pt-profile">
+          <div class="page-head">
+            <div>
+              <h1>Profile</h1>
+              <p>Personal and medical information.</p>
+            </div>
+          </div>
+          <div class="grid-2b">
+            <div class="panel">
+              <div class="panel-h">
+                <h3>Personal details</h3>
+              </div>
+              <table class="tbl">
+                <tbody>
+                  <tr>
+                    <td style="color:var(--muted)">Full name</td>
+                    <td style="text-align:right"><b>Riya Sharma</b></td>
+                  </tr>
+                  <tr>
+                    <td style="color:var(--muted)">Patient ID</td>
+                    <td style="text-align:right"><b>PT-2041</b></td>
+                  </tr>
+                  <tr>
+                    <td style="color:var(--muted)">Age / Gender</td>
+                    <td style="text-align:right"><b>32 · Female</b></td>
+                  </tr>
+                  <tr>
+                    <td style="color:var(--muted)">Mobile</td>
+                    <td style="text-align:right"><b>[placeholder]</b></td>
+                  </tr>
+                  <tr>
+                    <td style="color:var(--muted)">Blood group</td>
+                    <td style="text-align:right"><b>O+</b></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="panel">
+              <div class="panel-h">
+                <h3>Medical summary</h3>
+              </div>
+              <table class="tbl">
+                <tbody>
+                  <tr>
+                    <td style="color:var(--muted)">Allergies</td>
+                    <td style="text-align:right"><b>None recorded</b></td>
+                  </tr>
+                  <tr>
+                    <td style="color:var(--muted)">Chronic conditions</td>
+                    <td style="text-align:right"><b>Hypertension</b></td>
+                  </tr>
+                  <tr>
+                    <td style="color:var(--muted)">Primary doctor</td>
+                    <td style="text-align:right"><b>Dr. [Cardiology]</b></td>
+                  </tr>
+                  <tr>
+                    <td style="color:var(--muted)">Insurance</td>
+                    <td style="text-align:right"><b>[Provider placeholder]</b></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============================================================= DOCTOR PORTAL -->
+  <main class="view" id="view-doctor">
+    <div class="portal">
+      <aside class="side" id="side-doctor">
+        <div class="side-user">
+          <div class="av">DC</div>
+          <div>
+            <div class="nm">Dr. [Cardiology]</div>
+            <div class="rl">Cardiology · Consultant</div>
           </div>
         </div>
-      </div>
-    </section>
+        <div class="nav-lbl">Clinical</div>
+        <div class="nav-item on" data-scr="dr-dash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <rect x="3" y="3" width="8" height="8" rx="2" />
+            <rect x="13" y="3" width="8" height="5" rx="2" />
+            <rect x="13" y="10" width="8" height="11" rx="2" />
+            <rect x="3" y="13" width="8" height="8" rx="2" />
+          </svg>Dashboard</div>
+        <div class="nav-item" data-scr="dr-patients"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="9" cy="8" r="3.5" />
+            <path d="M3 21c0-3.5 3-5.5 6-5.5s6 2 6 5.5" />
+            <path d="M17 7h4M19 5v4" />
+          </svg>My patients</div>
+        <div class="nav-item" data-scr="dr-consult"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+            <path d="M14 3v6h6M9 13h6M9 17h4" />
+          </svg>Consultation</div>
+        <div class="nav-item" data-scr="dr-lab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M9 3v6l-5 8a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-8V3" />
+          </svg>Lab reports</div>
+        <button class="side-signout" onclick="signOut()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+            <path d="M16 17l5-5-5-5M21 12H9" />
+          </svg>Sign out</button>
+      </aside>
+      <div class="main">
+        <!-- DOCTOR DASHBOARD -->
+        <section class="screen on" id="dr-dash">
+          <div class="page-head">
+            <div>
+              <h1>Today's clinic</h1>
+              <p class="hi">Thursday, 14 September · 8 appointments scheduled</p>
+            </div>
+            <div class="chip"><span class="badge b-available" style="background:none;padding:0">Available</span> On duty
+            </div>
+          </div>
+          <div class="stat-grid">
+            <div class="stat">
+              <div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg></div>
+              <div class="v" data-count="8">0</div>
+              <div class="k">Appointments today</div>
+            </div>
+            <div class="stat">
+              <div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg></div>
+              <div class="v" data-count="3">0</div>
+              <div class="k">Consultations done</div>
+            </div>
+            <div class="stat">
+              <div class="ic ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 6v6l4 2" />
+                  <circle cx="12" cy="12" r="9" />
+                </svg></div>
+              <div class="v" data-count="5">0</div>
+              <div class="k">Waiting</div>
+            </div>
+            <div class="stat">
+              <div class="ic ic-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 3v6l-5 8a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-8V3" />
+                </svg></div>
+              <div class="v" data-count="2">0</div>
+              <div class="k">Reports to review</div>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="panel">
+              <div class="panel-h">
+                <h3>Appointment queue</h3><a>Full schedule</a>
+              </div>
+              <div class="appt-list">
+                <div class="appt">
+                  <div class="tm">
+                    <div class="h">10:30</div>
+                    <div class="m">AM</div>
+                  </div>
+                  <div class="sep"></div>
+                  <div class="av">RS</div>
+                  <div class="info">
+                    <div class="nm">Riya Sharma</div>
+                    <div class="sub">Follow-up · Hypertension</div>
+                  </div><button class="btn btn-primary btn-sm" onclick="openConsult('Riya Sharma')">Start</button>
+                </div>
+                <div class="appt">
+                  <div class="tm">
+                    <div class="h">10:45</div>
+                    <div class="m">AM</div>
+                  </div>
+                  <div class="sep"></div>
+                  <div class="av">AM</div>
+                  <div class="info">
+                    <div class="nm">Arun Mehta</div>
+                    <div class="sub">New · Chest discomfort</div>
+                  </div><span class="badge b-confirmed">Confirmed</span>
+                </div>
+                <div class="appt">
+                  <div class="tm">
+                    <div class="h">11:15</div>
+                    <div class="m">AM</div>
+                  </div>
+                  <div class="sep"></div>
+                  <div class="av">PK</div>
+                  <div class="info">
+                    <div class="nm">Priya Kulkarni</div>
+                    <div class="sub">Follow-up · Post-op review</div>
+                  </div><span class="badge b-pending pulse">Waiting</span>
+                </div>
+                <div class="appt">
+                  <div class="tm">
+                    <div class="h">11:45</div>
+                    <div class="m">AM</div>
+                  </div>
+                  <div class="sep"></div>
+                  <div class="av">SV</div>
+                  <div class="info">
+                    <div class="nm">Sanjay Verma</div>
+                    <div class="sub">New · Palpitations</div>
+                  </div><span class="badge b-confirmed">Confirmed</span>
+                </div>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="panel-h">
+                <h3>Consultation load</h3>
+              </div>
+              <div class="chart-bars" id="drChart">
+                <div class="cbar">
+                  <div class="col" data-h="60" data-v="6"></div>
+                  <div class="lbl">Mon</div>
+                </div>
+                <div class="cbar">
+                  <div class="col" data-h="85" data-v="9"></div>
+                  <div class="lbl">Tue</div>
+                </div>
+                <div class="cbar">
+                  <div class="col alt" data-h="50" data-v="5"></div>
+                  <div class="lbl">Wed</div>
+                </div>
+                <div class="cbar">
+                  <div class="col" data-h="100" data-v="11"></div>
+                  <div class="lbl">Thu</div>
+                </div>
+                <div class="cbar">
+                  <div class="col alt" data-h="70" data-v="7"></div>
+                  <div class="lbl">Fri</div>
+                </div>
+                <div class="cbar">
+                  <div class="col" data-h="40" data-v="4"></div>
+                  <div class="lbl">Sat</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-    <!-- TOKEN QUEUE -->
-    <section class="screen" id="st-queue">
-      <div class="page-head"><div><h1>Token queue</h1><p>Live waiting-area board · call patients in order.</p></div><button class="btn btn-primary btn-sm" onclick="callNext()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Call next</button></div>
-      <div class="grid-2">
-        <div class="panel" style="background:var(--grad-cta);color:#fff">
-          <div style="font-size:13px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;opacity:.85">Now serving</div>
-          <div style="font-size:64px;font-weight:800;line-height:1.05;margin:8px 0" id="nowTok">A-08</div>
-          <div style="font-size:18px;font-weight:700" id="nowName">Rohit Sharma</div>
-          <div style="opacity:.85;font-size:14px" id="nowDept">Cardiology · Counter 2</div>
-        </div>
-        <div class="panel"><div class="panel-h"><h3>Up next</h3><span class="badge b-pending" id="waitCount">4 waiting</span></div>
-          <div class="appt-list" id="queueList"></div>
-        </div>
-      </div>
-    </section>
+        <!-- PATIENTS -->
+        <section class="screen" id="dr-patients">
+          <div class="page-head">
+            <div>
+              <h1>My patients</h1>
+              <p>Patients under your care.</p>
+            </div>
+          </div>
+          <div class="panel">
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th>Patient</th>
+                  <th>Age</th>
+                  <th>Condition</th>
+                  <th>Last visit</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="who">
+                    <div class="av">RS</div>
+                    <div>
+                      <div class="nm">Riya Sharma</div>
+                      <div class="sub">PT-2041</div>
+                    </div>
+                  </td>
+                  <td>32</td>
+                  <td>Hypertension</td>
+                  <td>12 May 2026</td>
+                  <td><span class="badge b-confirmed">Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm" onclick="openConsult('Riya Sharma')">Open</button></td>
+                </tr>
+                <tr>
+                  <td class="who">
+                    <div class="av">AM</div>
+                    <div>
+                      <div class="nm">Arun Mehta</div>
+                      <div class="sub">PT-2088</div>
+                    </div>
+                  </td>
+                  <td>45</td>
+                  <td>Angina · under review</td>
+                  <td>New</td>
+                  <td><span class="badge b-pending">New</span></td>
+                  <td><button class="btn btn-ghost btn-sm" onclick="openConsult('Arun Mehta')">Open</button></td>
+                </tr>
+                <tr>
+                  <td class="who">
+                    <div class="av">PK</div>
+                    <div>
+                      <div class="nm">Priya Kulkarni</div>
+                      <div class="sub">PT-1994</div>
+                    </div>
+                  </td>
+                  <td>58</td>
+                  <td>Post-op recovery</td>
+                  <td>02 May 2026</td>
+                  <td><span class="badge b-confirmed">Active</span></td>
+                  <td><button class="btn btn-ghost btn-sm" onclick="openConsult('Priya Kulkarni')">Open</button></td>
+                </tr>
+                <tr>
+                  <td class="who">
+                    <div class="av">SV</div>
+                    <div>
+                      <div class="nm">Sanjay Verma</div>
+                      <div class="sub">PT-2101</div>
+                    </div>
+                  </td>
+                  <td>39</td>
+                  <td>Palpitations</td>
+                  <td>New</td>
+                  <td><span class="badge b-pending">New</span></td>
+                  <td><button class="btn btn-ghost btn-sm" onclick="openConsult('Sanjay Verma')">Open</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
 
-    <!-- NURSING STATION -->
-    <section class="screen" id="st-nursing">
-      <div class="page-head"><div><h1>Nursing station</h1><p>Ward 2 · General — assigned inpatients and rounds.</p></div><div class="chip"><span class="badge b-available" style="background:none;padding:0">On shift</span> Morning</div></div>
-      <div class="stat-grid">
-        <div class="stat"><div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M4 20v-8h16v8M6 12V8a2 2 0 0 1 2-2h3v6"/><circle cx="8" cy="9" r="1"/></svg></div><div class="v" data-count="8">0</div><div class="k">Assigned patients</div></div>
-        <div class="stat"><div class="ic ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.5 20.5 3.5 13.5a5 5 0 0 1 7-7l7 7a5 5 0 0 1-7 7z"/><path d="m8.5 8.5 7 7"/></svg></div><div class="v" data-count="5">0</div><div class="k">Medications due</div></div>
-        <div class="stat"><div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div class="v" data-count="3">0</div><div class="k">Vitals to record</div></div>
-        <div class="stat"><div class="ic ic-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="3" width="8" height="4" rx="1"/><path d="M8 5H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><path d="M9 12h6M9 16h4"/></svg></div><div class="v" data-count="4">0</div><div class="k">Open tasks</div></div>
+        <!-- CONSULTATION -->
+        <section class="screen" id="dr-consult">
+          <div class="page-head">
+            <div>
+              <h1>Consultation</h1>
+              <p>Active session · <b id="consultName" style="color:var(--text)">Riya Sharma</b></p>
+            </div><button class="btn btn-ghost btn-sm" onclick="drGo('dr-dash')"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>Back</button>
+          </div>
+          <div class="consult-grid">
+            <div>
+              <div class="panel pt-card">
+                <div class="av" id="consultAv">RS</div>
+                <div class="nm" id="consultName2">Riya Sharma</div>
+                <div class="meta">32 · Female · O+ · PT-2041</div>
+                <div class="vitals">
+                  <div class="vital">
+                    <div class="v">118/76</div>
+                    <div class="k">BP</div>
+                  </div>
+                  <div class="vital">
+                    <div class="v">72</div>
+                    <div class="k">Pulse</div>
+                  </div>
+                  <div class="vital">
+                    <div class="v">98.4°</div>
+                    <div class="k">Temp</div>
+                  </div>
+                  <div class="vital">
+                    <div class="v">98%</div>
+                    <div class="k">SpO₂</div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel">
+                <div class="panel-h">
+                  <h3>Patient history</h3>
+                </div>
+                <div class="hist-item">
+                  <div class="dot"></div>
+                  <div>
+                    <div class="t">Hypertension diagnosed</div>
+                    <div class="d">12 May 2026 · Cardiology</div>
+                  </div>
+                </div>
+                <div class="hist-item">
+                  <div class="dot"></div>
+                  <div>
+                    <div class="t">Routine check-up · Normal</div>
+                    <div class="d">28 Apr 2026 · General Medicine</div>
+                  </div>
+                </div>
+                <div class="hist-item">
+                  <div class="dot"></div>
+                  <div>
+                    <div class="t">Knee strain · resolved</div>
+                    <div class="d">03 Apr 2026 · Orthopedics</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="tabs"><button class="on" data-tab="ct-diag"
+                  onclick="consultTab('ct-diag',this)">Diagnosis</button><button data-tab="ct-rx"
+                  onclick="consultTab('ct-rx',this)">Prescription</button><button data-tab="ct-lab"
+                  onclick="consultTab('ct-lab',this)">Lab orders</button></div>
+              <div class="panel" id="ct-diag">
+                <div class="panel-h">
+                  <h3>Clinical notes & diagnosis</h3>
+                </div>
+                <div class="field"><label>Chief complaint</label><input value="Follow-up for blood pressure management">
+                </div>
+                <div class="field"><label>Examination findings</label><textarea
+                    rows="3">BP stable on current medication. No chest pain, no breathlessness. Cardiovascular exam unremarkable.</textarea>
+                </div>
+                <div class="field"><label>Diagnosis</label><input value="Essential hypertension — controlled"></div>
+                <button class="btn btn-ghost btn-sm"
+                  onclick="consultTab('ct-rx',document.querySelectorAll('.tabs button')[1])">Continue to prescription
+                  →</button>
+              </div>
+              <div class="panel" id="ct-rx" style="display:none">
+                <div class="panel-h">
+                  <h3>Prescription</h3><a onclick="addRx()">+ Add medicine</a>
+                </div>
+                <div id="rxList">
+                  <div class="rx-row"><input value="Amlodipine 5mg"><input value="1-0-1"><input value="30 days"><button
+                      class="rx-del" onclick="this.parentElement.remove()"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6" />
+                      </svg></button></div>
+                  <div class="rx-row"><input value="Atorvastatin 10mg"><input value="0-0-1"><input
+                      value="30 days"><button class="rx-del" onclick="this.parentElement.remove()"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6" />
+                      </svg></button></div>
+                </div>
+                <button class="btn btn-primary btn-block" style="margin-top:16px" onclick="finishConsult()"><svg
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>Save & complete consultation</button>
+              </div>
+              <div class="panel" id="ct-lab" style="display:none">
+                <div class="panel-h">
+                  <h3>Order lab tests</h3>
+                </div>
+                <table class="tbl">
+                  <thead>
+                    <tr>
+                      <th>Test</th>
+                      <th>Priority</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><b>Complete Blood Count</b></td>
+                      <td>Routine</td>
+                      <td><span class="badge b-completed-lab">Completed</span></td>
+                    </tr>
+                    <tr>
+                      <td><b>Lipid Profile</b></td>
+                      <td>Routine</td>
+                      <td><span class="badge b-processing pulse">Processing</span></td>
+                    </tr>
+                    <tr>
+                      <td><b>ECG</b></td>
+                      <td>Urgent</td>
+                      <td><span class="badge b-pending">Ordered</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- DOCTOR LAB -->
+        <section class="screen" id="dr-lab">
+          <div class="page-head">
+            <div>
+              <h1>Lab reports</h1>
+              <p>Results awaiting your review.</p>
+            </div>
+          </div>
+          <div class="panel">
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th>Patient</th>
+                  <th>Test</th>
+                  <th>Ordered</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="who">
+                    <div class="av">RS</div>
+                    <div>
+                      <div class="nm">Riya Sharma</div>
+                      <div class="sub">PT-2041</div>
+                    </div>
+                  </td>
+                  <td>Complete Blood Count</td>
+                  <td>Today</td>
+                  <td><span class="badge b-completed-lab">Completed</span></td>
+                  <td><button class="btn btn-ghost btn-sm">Review</button></td>
+                </tr>
+                <tr>
+                  <td class="who">
+                    <div class="av">AM</div>
+                    <div>
+                      <div class="nm">Arun Mehta</div>
+                      <div class="sub">PT-2088</div>
+                    </div>
+                  </td>
+                  <td>Troponin I</td>
+                  <td>Today</td>
+                  <td><span class="badge b-processing pulse">Processing</span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="who">
+                    <div class="av">SV</div>
+                    <div>
+                      <div class="nm">Sanjay Verma</div>
+                      <div class="sub">PT-2101</div>
+                    </div>
+                  </td>
+                  <td>ECG · Holter</td>
+                  <td>Yesterday</td>
+                  <td><span class="badge b-cancelled">Cancelled</span></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
       </div>
-      <div class="grid-2">
-        <div class="panel"><div class="panel-h"><h3>Medication schedule</h3></div>
-          <table class="tbl"><thead><tr><th>Patient</th><th>Bed</th><th>Medicine</th><th>Time</th><th>Status</th><th></th></tr></thead><tbody>
-            <tr><td class="who"><div class="av">NP</div><div><div class="nm">Nikhil Patel</div><div class="sub">G-01</div></div></td><td>G-01</td><td>Amlodipine 5mg</td><td>10:00</td><td class="st"><span class="badge b-completed">Given</span></td><td></td></tr>
-            <tr><td class="who"><div class="av">MK</div><div><div class="nm">Meena Kumari</div><div class="sub">G-07</div></div></td><td>G-07</td><td>Ceftriaxone 1g IV</td><td>11:00</td><td class="st"><span class="badge b-pending pulse">Due</span></td><td><button class="btn btn-primary btn-sm" onclick="markGiven(this)">Mark given</button></td></tr>
-            <tr><td class="who"><div class="av">RT</div><div><div class="nm">Ravi Thakkar</div><div class="sub">G-11</div></div></td><td>G-11</td><td>Paracetamol 650mg</td><td>11:30</td><td class="st"><span class="badge b-pending pulse">Due</span></td><td><button class="btn btn-primary btn-sm" onclick="markGiven(this)">Mark given</button></td></tr>
-            <tr><td class="who"><div class="av">SG</div><div><div class="nm">Sita Gohel</div><div class="sub">G-16</div></div></td><td>G-16</td><td>Insulin (sliding scale)</td><td>12:00</td><td class="st"><span class="badge b-pending pulse">Due</span></td><td><button class="btn btn-primary btn-sm" onclick="markGiven(this)">Mark given</button></td></tr>
-          </tbody></table>
-        </div>
-        <div class="panel"><div class="panel-h"><h3>Vitals to record</h3></div>
-          <div class="appt-list">
-            <div class="appt"><div class="av">MK</div><div class="info"><div class="nm">Meena Kumari</div><div class="sub">G-07 · BP, temp, SpO₂</div></div><button class="btn btn-ghost btn-sm" onclick="recordVitals(this)">Record</button></div>
-            <div class="appt"><div class="av">RT</div><div class="info"><div class="nm">Ravi Thakkar</div><div class="sub">G-11 · Pulse, temp</div></div><button class="btn btn-ghost btn-sm" onclick="recordVitals(this)">Record</button></div>
-            <div class="appt"><div class="av">SG</div><div class="info"><div class="nm">Sita Gohel</div><div class="sub">G-16 · Blood sugar</div></div><button class="btn btn-ghost btn-sm" onclick="recordVitals(this)">Record</button></div>
+    </div>
+  </main>
+
+  <!-- ============================================================= HOSPITAL ADMIN -->
+  <main class="view" id="view-admin">
+    <div class="portal">
+      <aside class="side" id="side-admin">
+        <div class="side-user">
+          <div class="av">AD</div>
+          <div>
+            <div class="nm">Admin Console</div>
+            <div class="rl">Hospital management</div>
           </div>
         </div>
+        <div class="nav-lbl">Overview</div>
+        <div class="nav-item on" data-scr="ad-dash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <rect x="3" y="3" width="8" height="8" rx="2" />
+            <rect x="13" y="3" width="8" height="5" rx="2" />
+            <rect x="13" y="10" width="8" height="11" rx="2" />
+            <rect x="3" y="13" width="8" height="8" rx="2" />
+          </svg>Dashboard</div>
+        <div class="nav-item" data-scr="ad-ipd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M2 20h20M4 20v-8h16v8M6 12V8a2 2 0 0 1 2-2h3v6" />
+            <circle cx="8" cy="9" r="1" />
+          </svg>IPD & beds<span class="cnt">4</span></div>
+        <div class="nav-item" data-scr="ad-appts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" />
+            <path d="M16 2v4M8 2v4M3 10h18" />
+          </svg>Appointments</div>
+        <div class="nav-item" data-scr="ad-depts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M3 21V7l9-4 9 4v14" />
+            <path d="M9 21v-6h6v6" />
+          </svg>Departments</div>
+        <div class="nav-item" data-scr="ad-staff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>Staff</div>
+        <div class="nav-item" data-scr="ad-billing"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <rect x="2" y="5" width="20" height="14" rx="2" />
+            <path d="M2 10h20" />
+          </svg>Billing</div>
+        <button class="side-signout" onclick="signOut()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+            <path d="M16 17l5-5-5-5M21 12H9" />
+          </svg>Sign out</button>
+      </aside>
+      <div class="main">
+        <!-- ADMIN DASHBOARD -->
+        <section class="screen on" id="ad-dash">
+          <div class="page-head">
+            <div>
+              <h1>Hospital dashboard</h1>
+              <p>Real-time operational overview.</p>
+            </div>
+            <div class="chip"><span class="badge b-available pulse" style="background:none;padding:0"></span>Live ·
+              updated just now</div>
+          </div>
+          <div class="stat-grid">
+            <div class="stat">
+              <div class="tr up">+8%</div>
+              <div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 21c0-4 4-6 8-6s8 2 8 6" />
+                </svg></div>
+              <div class="v" data-count="1284">0</div>
+              <div class="k">Patients this month</div>
+            </div>
+            <div class="stat">
+              <div class="tr up">+3%</div>
+              <div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" />
+                  <path d="M16 2v4M8 2v4M3 10h18" />
+                </svg></div>
+              <div class="v" data-count="342">0</div>
+              <div class="k">Appointments today</div>
+            </div>
+            <div class="stat">
+              <div class="tr dn">-5%</div>
+              <div class="ic ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M2 20h20M4 20v-8h16v8M6 12V8a2 2 0 0 1 2-2h3v6" />
+                </svg></div>
+              <div class="v"><span data-count="18">0</span>/64</div>
+              <div class="k">Beds available</div>
+            </div>
+            <div class="stat">
+              <div class="tr up">+12%</div>
+              <div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg></div>
+              <div class="v">₹<span data-count="8.4">0</span>L</div>
+              <div class="k">Revenue this month</div>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="panel">
+              <div class="panel-h">
+                <h3>Revenue trend</h3><span class="badge b-completed">Last 6 months</span>
+              </div>
+              <div class="chart-bars" id="adChart">
+                <div class="cbar">
+                  <div class="col" data-h="55" data-v="₹5.2L"></div>
+                  <div class="lbl">Apr</div>
+                </div>
+                <div class="cbar">
+                  <div class="col" data-h="68" data-v="₹6.1L"></div>
+                  <div class="lbl">May</div>
+                </div>
+                <div class="cbar">
+                  <div class="col" data-h="60" data-v="₹5.6L"></div>
+                  <div class="lbl">Jun</div>
+                </div>
+                <div class="cbar">
+                  <div class="col" data-h="80" data-v="₹7.3L"></div>
+                  <div class="lbl">Jul</div>
+                </div>
+                <div class="cbar">
+                  <div class="col" data-h="72" data-v="₹6.8L"></div>
+                  <div class="lbl">Aug</div>
+                </div>
+                <div class="cbar">
+                  <div class="col" data-h="100" data-v="₹8.4L"></div>
+                  <div class="lbl">Sep</div>
+                </div>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="panel-h">
+                <h3>Appointment status</h3>
+              </div>
+              <div class="donut-wrap">
+                <svg class="donut" id="adDonut" viewBox="0 0 120 120">
+                  <circle cx="60" cy="60" r="46" stroke="#e6f5ec" data-seg="62"></circle>
+                  <circle cx="60" cy="60" r="46" stroke="#e9f1f8" data-seg="20"></circle>
+                  <circle cx="60" cy="60" r="46" stroke="#fdf2df" data-seg="12"></circle>
+                  <circle cx="60" cy="60" r="46" stroke="#fbe9e9" data-seg="6"></circle>
+                </svg>
+                <div class="legend">
+                  <div class="li"><i style="background:#35A56B"></i>Confirmed <b>62%</b></div>
+                  <div class="li"><i style="background:#1f5fa0"></i>Completed <b>20%</b></div>
+                  <div class="li"><i style="background:#E9A23B"></i>Pending <b>12%</b></div>
+                  <div class="li"><i style="background:#D64545"></i>Cancelled <b>6%</b></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-h">
+              <h3>Department overview</h3><a onclick="adGo('ad-depts')">View all</a>
+            </div>
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th>Department</th>
+                  <th>Doctors</th>
+                  <th>Today's appts</th>
+                  <th>Beds</th>
+                  <th>Occupancy</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><b>Cardiology</b></td>
+                  <td>6</td>
+                  <td>48</td>
+                  <td>12/16</td>
+                  <td><span class="badge b-occupied">75%</span></td>
+                </tr>
+                <tr>
+                  <td><b>Orthopedics</b></td>
+                  <td>5</td>
+                  <td>36</td>
+                  <td>9/14</td>
+                  <td><span class="badge b-pending">64%</span></td>
+                </tr>
+                <tr>
+                  <td><b>General Medicine</b></td>
+                  <td>8</td>
+                  <td>72</td>
+                  <td>15/20</td>
+                  <td><span class="badge b-occupied">75%</span></td>
+                </tr>
+                <tr>
+                  <td><b>Pediatrics</b></td>
+                  <td>4</td>
+                  <td>40</td>
+                  <td>6/14</td>
+                  <td><span class="badge b-available">43%</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- IPD & BEDS -->
+        <section class="screen" id="ad-ipd">
+          <div class="page-head">
+            <div>
+              <h1>IPD & bed management</h1>
+              <p>In-patient admissions and live bed availability.</p>
+            </div>
+          </div>
+          <div class="stat-grid" style="grid-template-columns:repeat(4,1fr)">
+            <div class="stat">
+              <div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M2 20h20M4 20v-8h16v8" />
+                </svg></div>
+              <div class="v" data-count="18">0</div>
+              <div class="k">Available</div>
+            </div>
+            <div class="stat">
+              <div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 21c0-4 4-6 8-6s8 2 8 6" />
+                </svg></div>
+              <div class="v" data-count="38">0</div>
+              <div class="k">Occupied</div>
+            </div>
+            <div class="stat">
+              <div class="ic" style="background:#efeafb;color:#7a5bbd"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path d="M3 12a9 9 0 1 0 9-9" />
+                  <path d="M3 3v9h9" />
+                </svg></div>
+              <div class="v" data-count="4">0</div>
+              <div class="k">Cleaning</div>
+            </div>
+            <div class="stat">
+              <div class="ic ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 6v6l4 2" />
+                  <circle cx="12" cy="12" r="9" />
+                </svg></div>
+              <div class="v" data-count="4">0</div>
+              <div class="k">Reserved</div>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="panel">
+              <div class="panel-h">
+                <h3>Ward — General (Floor 2)</h3><span id="bedHint" style="font-size:13px;color:var(--muted)">Select an
+                  available bed to assign</span>
+              </div>
+              <div class="bed-legend">
+                <div class="bl"><i style="background:#e6f5ec"></i>Available</div>
+                <div class="bl"><i style="background:#e9f1f8"></i>Occupied</div>
+                <div class="bl"><i style="background:#efeafb"></i>Cleaning</div>
+                <div class="bl"><i style="background:#fdf2df"></i>Reserved</div>
+              </div>
+              <div class="bed-grid" id="bedGrid"></div>
+            </div>
+            <div>
+              <div class="panel">
+                <div class="panel-h">
+                  <h3>Awaiting admission</h3>
+                </div>
+                <div class="appt-list" id="admitList">
+                  <div class="appt">
+                    <div class="av">NP</div>
+                    <div class="info">
+                      <div class="nm">Nikhil Patel</div>
+                      <div class="sub">Cardiology · Dr. [Cardiology]</div>
+                    </div><button class="btn btn-primary btn-sm" onclick="selectAdmit(this,'Nikhil Patel')">Assign
+                      bed</button>
+                  </div>
+                  <div class="appt">
+                    <div class="av">MK</div>
+                    <div class="info">
+                      <div class="nm">Meena Kumari</div>
+                      <div class="sub">General Medicine · observation</div>
+                    </div><button class="btn btn-ghost btn-sm" onclick="selectAdmit(this,'Meena Kumari')">Assign
+                      bed</button>
+                  </div>
+                  <div class="appt">
+                    <div class="av">RT</div>
+                    <div class="info">
+                      <div class="nm">Ravi Thakkar</div>
+                      <div class="sub">Orthopedics · post-op</div>
+                    </div><button class="btn btn-ghost btn-sm" onclick="selectAdmit(this,'Ravi Thakkar')">Assign
+                      bed</button>
+                  </div>
+                </div>
+              </div>
+              <div class="panel" id="assignPanel" style="display:none">
+                <div class="panel-h">
+                  <h3>Assign bed</h3>
+                </div>
+                <div class="mini-row" style="background:var(--blue-050);margin-bottom:12px"><span
+                    class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="8" r="4" />
+                      <path d="M4 21c0-4 4-6 8-6s8 2 8 6" />
+                    </svg></span> Patient <b id="assignPt" style="margin-left:auto">—</b></div>
+                <div class="mini-row" style="background:var(--green-050);margin-bottom:16px"><span
+                    class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M2 20h20M4 20v-8h16v8" />
+                    </svg></span> Selected bed <b id="assignBed" style="margin-left:auto">None</b></div>
+                <button class="btn btn-primary btn-block" id="assignBtn" onclick="confirmAssign()" disabled
+                  style="opacity:.5">Confirm admission</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ADMIN APPOINTMENTS -->
+        <section class="screen" id="ad-appts">
+          <div class="page-head">
+            <div>
+              <h1>Appointments</h1>
+              <p>Hospital-wide scheduling analytics.</p>
+            </div>
+          </div>
+          <div class="panel">
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th>Patient</th>
+                  <th>Doctor</th>
+                  <th>Department</th>
+                  <th>Time</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="who">
+                    <div class="av">RS</div>
+                    <div class="nm">Riya Sharma</div>
+                  </td>
+                  <td>Dr. [Cardiology]</td>
+                  <td>Cardiology</td>
+                  <td>10:30 AM</td>
+                  <td><span class="badge b-confirmed">Confirmed</span></td>
+                </tr>
+                <tr>
+                  <td class="who">
+                    <div class="av">AM</div>
+                    <div class="nm">Arun Mehta</div>
+                  </td>
+                  <td>Dr. [Cardiology]</td>
+                  <td>Cardiology</td>
+                  <td>10:45 AM</td>
+                  <td><span class="badge b-pending pulse">Pending</span></td>
+                </tr>
+                <tr>
+                  <td class="who">
+                    <div class="av">SD</div>
+                    <div class="nm">Sneha Desai</div>
+                  </td>
+                  <td>Dr. [Dermatology]</td>
+                  <td>Dermatology</td>
+                  <td>11:00 AM</td>
+                  <td><span class="badge b-confirmed">Confirmed</span></td>
+                </tr>
+                <tr>
+                  <td class="who">
+                    <div class="av">VP</div>
+                    <div class="nm">Vikram Patel</div>
+                  </td>
+                  <td>Dr. [Orthopedics]</td>
+                  <td>Orthopedics</td>
+                  <td>11:30 AM</td>
+                  <td><span class="badge b-completed">Completed</span></td>
+                </tr>
+                <tr>
+                  <td class="who">
+                    <div class="av">AN</div>
+                    <div class="nm">Anita Nair</div>
+                  </td>
+                  <td>Dr. [ENT]</td>
+                  <td>ENT</td>
+                  <td>12:00 PM</td>
+                  <td><span class="badge b-cancelled">Cancelled</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ADMIN DEPARTMENTS -->
+        <section class="screen" id="ad-depts">
+          <div class="page-head">
+            <div>
+              <h1>Departments</h1>
+              <p>Capacity and staffing across specialities.</p>
+            </div>
+          </div>
+          <div class="rec-grid" id="adDeptGrid"></div>
+        </section>
+
+        <!-- ADMIN STAFF -->
+        <section class="screen" id="ad-staff">
+          <div class="page-head">
+            <div>
+              <h1>Staff</h1>
+              <p>Directory of doctors, nurses and support staff.</p>
+            </div>
+            <button class="btn btn-primary" onclick="openStaff()"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12h14" />
+              </svg>Add staff</button>
+          </div>
+          <div class="stat-grid" style="grid-template-columns:repeat(4,1fr);margin-bottom:22px">
+            <div class="stat">
+              <div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                </svg></div>
+              <div class="v" id="stTotal" data-count="0">0</div>
+              <div class="k">Total staff</div>
+            </div>
+            <div class="stat">
+              <div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M8 2v4M16 2v4M4 8h16M12 12v5M9.5 14.5h5" />
+                  <rect x="4" y="4" width="16" height="17" rx="2" />
+                </svg></div>
+              <div class="v" id="stDoc" data-count="0">0</div>
+              <div class="k">Doctors</div>
+            </div>
+            <div class="stat">
+              <div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2a5 5 0 0 0-5 5v3a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5zM6 21v-2a6 6 0 0 1 12 0v2" />
+                </svg></div>
+              <div class="v" id="stNurse" data-count="0">0</div>
+              <div class="k">Nurses &amp; support</div>
+            </div>
+            <div class="stat">
+              <div class="ic ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" />
+                </svg></div>
+              <div class="v" id="stLeave" data-count="0">0</div>
+              <div class="k">On leave</div>
+            </div>
+          </div>
+          <div class="panel">
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Role</th>
+                  <th>Department</th>
+                  <th>Shift</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="staffBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ADMIN BILLING -->
+        <section class="screen" id="ad-billing">
+          <div class="page-head">
+            <div>
+              <h1>Billing</h1>
+              <p>Revenue, invoices and collections.</p>
+            </div>
+          </div>
+          <div class="stat-grid" style="grid-template-columns:repeat(3,1fr)">
+            <div class="stat">
+              <div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg></div>
+              <div class="v">₹<span data-count="8.4">0</span>L</div>
+              <div class="k">Collected (Sep)</div>
+            </div>
+            <div class="stat">
+              <div class="ic ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 6v6l4 2" />
+                </svg></div>
+              <div class="v">₹<span data-count="1.2">0</span>L</div>
+              <div class="k">Pending dues</div>
+            </div>
+            <div class="stat">
+              <div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="5" width="20" height="14" rx="2" />
+                  <path d="M2 10h20" />
+                </svg></div>
+              <div class="v" data-count="486">0</div>
+              <div class="k">Invoices raised</div>
+            </div>
+          </div>
+          <div class="panel">
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th>Invoice</th>
+                  <th>Patient</th>
+                  <th>Department</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><b>INV-1042</b></td>
+                  <td>Riya Sharma</td>
+                  <td>Cardiology</td>
+                  <td>₹1,450</td>
+                  <td><span class="badge b-pending">Due</span></td>
+                </tr>
+                <tr>
+                  <td><b>INV-1041</b></td>
+                  <td>Vikram Patel</td>
+                  <td>Orthopedics</td>
+                  <td>₹12,800</td>
+                  <td><span class="badge b-completed-lab">Paid</span></td>
+                </tr>
+                <tr>
+                  <td><b>INV-1040</b></td>
+                  <td>Nikhil Patel</td>
+                  <td>Cardiology · IPD</td>
+                  <td>₹34,500</td>
+                  <td><span class="badge b-processing pulse">Processing</span></td>
+                </tr>
+                <tr>
+                  <td><b>INV-1039</b></td>
+                  <td>Sneha Desai</td>
+                  <td>Dermatology</td>
+                  <td>₹900</td>
+                  <td><span class="badge b-completed-lab">Paid</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
       </div>
-    </section>
-
-  </div>
- </div>
-</main>
-
-<!-- ===== AUTH GATE (sign in / sign up) ===== -->
-<!-- ADD STAFF MODAL -->
-<div class="modal-overlay" id="staffModal">
-  <div class="modal" role="dialog" aria-modal="true">
-    <div class="modal-h">
-      <div><h3>Add staff member</h3><p>Enter details to add a new member to the directory.</p></div>
-      <button class="modal-x" onclick="closeStaff()" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
     </div>
-    <div class="modal-b">
-      <div class="field"><label>Full name</label><input id="sfName" placeholder="e.g. Dr. [Cardiology] or Kavita Rao"></div>
-      <div class="form-2">
-        <div class="field"><label>Role</label>
-          <select id="sfRole">
-            <option value="Doctor">Doctor</option>
-            <option value="Head Nurse">Head Nurse</option>
-            <option value="Nurse">Nurse</option>
-            <option value="Receptionist">Receptionist</option>
-            <option value="Lab Technician">Lab Technician</option>
-            <option value="Pharmacist">Pharmacist</option>
-            <option value="Ward Assistant">Ward Assistant</option>
-            <option value="Administrator">Administrator</option>
-          </select>
+  </main>
+
+  <!-- ============================================================= STAFF PANEL -->
+  <main class="view" id="view-staff">
+    <div class="portal">
+      <aside class="side" id="side-staff">
+        <div class="side-user">
+          <div class="av">KR</div>
+          <div>
+            <div class="nm">Kavita Rao</div>
+            <div class="rl">Front Desk · Receptionist</div>
+          </div>
         </div>
-        <div class="field"><label>Department</label>
-          <select id="sfDept">
-            <option>Cardiology</option><option>Orthopedics</option><option>Neurology</option>
-            <option>Pediatrics</option><option>Dermatology</option><option>ENT</option>
-            <option>General Medicine</option><option>Gynecology</option>
-            <option>ICU</option><option>Diagnostics</option><option>Pharmacy</option>
-            <option>Front Desk</option><option>Administration</option>
-          </select>
-        </div>
-        <div class="field"><label>Shift</label>
-          <select id="sfShift"><option>Morning</option><option>Evening</option><option>Night</option><option>Rotational</option></select>
-        </div>
-        <div class="field"><label>Status</label>
-          <select id="sfStatus"><option value="active">Active</option><option value="onleave">On leave</option><option value="inactive">Inactive</option></select>
-        </div>
-        <div class="field"><label>Phone <span style="color:var(--muted);font-weight:500">(optional)</span></label><input id="sfPhone" placeholder="[phone]"></div>
-        <div class="field"><label>Email <span style="color:var(--muted);font-weight:500">(optional)</span></label><input id="sfEmail" placeholder="[email]"></div>
+        <div class="nav-lbl">Operations</div>
+        <div class="nav-item on" data-scr="st-dash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <rect x="3" y="3" width="8" height="8" rx="2" />
+            <rect x="13" y="3" width="8" height="5" rx="2" />
+            <rect x="13" y="10" width="8" height="11" rx="2" />
+            <rect x="3" y="13" width="8" height="8" rx="2" />
+          </svg>Dashboard</div>
+        <div class="nav-item" data-scr="st-checkin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <rect x="8" y="3" width="8" height="4" rx="1" />
+            <path d="M8 5H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
+            <path d="m9 14 2 2 4-4" />
+          </svg>Front desk<span class="cnt">7</span></div>
+        <div class="nav-item" data-scr="st-register"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="9" cy="8" r="3.5" />
+            <path d="M3 21c0-3.5 3-5.5 6-5.5s6 2 6 5.5" />
+            <path d="M17 7h4M19 5v4" />
+          </svg>Register walk-in</div>
+        <div class="nav-item" data-scr="st-queue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <rect x="3" y="4" width="18" height="12" rx="2" />
+            <path d="M8 20h8M12 16v4" />
+          </svg>Token queue</div>
+        <div class="nav-lbl">Wards</div>
+        <div class="nav-item" data-scr="st-nursing"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M2 20h20M4 20v-8h16v8M6 12V8a2 2 0 0 1 2-2h3v6" />
+            <circle cx="8" cy="9" r="1" />
+          </svg>Nursing station<span class="cnt">5</span></div>
+        <button class="side-signout" onclick="signOut()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+            <path d="M16 17l5-5-5-5M21 12H9" />
+          </svg>Sign out</button>
+      </aside>
+      <div class="main">
+
+        <!-- STAFF DASHBOARD -->
+        <section class="screen on" id="st-dash">
+          <div class="page-head">
+            <div>
+              <h1>Front desk</h1>
+              <p class="hi">Saturday, 14 September · Shift 9:00 AM – 5:00 PM</p>
+            </div>
+            <div class="chip"><span class="badge b-available" style="background:none;padding:0">Available</span> On duty
+            </div>
+          </div>
+          <div class="stat-grid">
+            <div class="stat">
+              <div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M8 3v4a4 4 0 0 0 8 0V3" />
+                  <path d="m9 14 2 2 4-4" />
+                  <rect x="4" y="7" width="16" height="14" rx="2" />
+                </svg></div>
+              <div class="v" data-count="46">0</div>
+              <div class="k">Check-ins today</div>
+            </div>
+            <div class="stat">
+              <div class="ic ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 6v6l4 2" />
+                  <circle cx="12" cy="12" r="9" />
+                </svg></div>
+              <div class="v" data-count="7">0</div>
+              <div class="k">Waiting in lobby</div>
+            </div>
+            <div class="stat">
+              <div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="9" cy="8" r="3.5" />
+                  <path d="M3 21c0-3.5 3-5.5 6-5.5s6 2 6 5.5" />
+                  <path d="M17 7h4M19 5v4" />
+                </svg></div>
+              <div class="v" data-count="12">0</div>
+              <div class="k">Walk-ins registered</div>
+            </div>
+            <div class="stat">
+              <div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4z" />
+                  <path d="M14 6v12" />
+                </svg></div>
+              <div class="v" data-count="38">0</div>
+              <div class="k">Tokens issued</div>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="panel">
+              <div class="panel-h">
+                <h3>Lobby queue</h3><a onclick="stGo('st-queue')">Open board</a>
+              </div>
+              <div class="appt-list">
+                <div class="appt">
+                  <div class="tm">
+                    <div class="h">A-08</div>
+                    <div class="m">Token</div>
+                  </div>
+                  <div class="sep"></div>
+                  <div class="av">RS</div>
+                  <div class="info">
+                    <div class="nm">Rohit Sharma</div>
+                    <div class="sub">Cardiology · Dr. [Cardiology]</div>
+                  </div><span class="badge b-processing pulse">In consult</span>
+                </div>
+                <div class="appt">
+                  <div class="tm">
+                    <div class="h">A-11</div>
+                    <div class="m">Token</div>
+                  </div>
+                  <div class="sep"></div>
+                  <div class="av">AD</div>
+                  <div class="info">
+                    <div class="nm">Anjali Desai</div>
+                    <div class="sub">Dermatology · New visit</div>
+                  </div><span class="badge b-confirmed">Checked in</span>
+                </div>
+                <div class="appt">
+                  <div class="tm">
+                    <div class="h">A-12</div>
+                    <div class="m">Token</div>
+                  </div>
+                  <div class="sep"></div>
+                  <div class="av">IS</div>
+                  <div class="info">
+                    <div class="nm">Imran Shaikh</div>
+                    <div class="sub">Orthopedics · Follow-up</div>
+                  </div><span class="badge b-pending pulse">Waiting</span>
+                </div>
+                <div class="appt">
+                  <div class="tm">
+                    <div class="h">A-13</div>
+                    <div class="m">Token</div>
+                  </div>
+                  <div class="sep"></div>
+                  <div class="av">NP</div>
+                  <div class="info">
+                    <div class="nm">Neha Patel</div>
+                    <div class="sub">General Medicine · New visit</div>
+                  </div><span class="badge b-pending pulse">Waiting</span>
+                </div>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="panel-h">
+                <h3>Footfall today</h3>
+              </div>
+              <div class="chart-bars" id="stChart">
+                <div class="cbar">
+                  <div class="col" data-h="55" data-v="11"></div>
+                  <div class="lbl">9a</div>
+                </div>
+                <div class="cbar">
+                  <div class="col" data-h="85" data-v="17"></div>
+                  <div class="lbl">10a</div>
+                </div>
+                <div class="cbar">
+                  <div class="col alt" data-h="70" data-v="14"></div>
+                  <div class="lbl">11a</div>
+                </div>
+                <div class="cbar">
+                  <div class="col" data-h="100" data-v="20"></div>
+                  <div class="lbl">12p</div>
+                </div>
+                <div class="cbar">
+                  <div class="col alt" data-h="45" data-v="9"></div>
+                  <div class="lbl">1p</div>
+                </div>
+                <div class="cbar">
+                  <div class="col" data-h="60" data-v="12"></div>
+                  <div class="lbl">2p</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FRONT DESK / CHECK-IN -->
+        <section class="screen" id="st-checkin">
+          <div class="page-head">
+            <div>
+              <h1>Front desk — check-in</h1>
+              <p>Today's scheduled appointments. Check patients in and issue a token.</p>
+            </div><button class="btn btn-primary btn-sm" onclick="stGo('st-register')"><svg viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12h14" />
+              </svg>Register walk-in</button>
+          </div>
+          <div class="panel">
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Patient</th>
+                  <th>Department</th>
+                  <th>Doctor</th>
+                  <th>Token</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>10:30 AM</td>
+                  <td class="who">
+                    <div class="av">RS</div>
+                    <div>
+                      <div class="nm">Riya Sharma</div>
+                      <div class="sub">PT-2041</div>
+                    </div>
+                  </td>
+                  <td>Cardiology</td>
+                  <td>Dr. [Cardiology]</td>
+                  <td class="tok">A-06</td>
+                  <td class="st"><span class="badge b-confirmed">Checked in</span></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>10:45 AM</td>
+                  <td class="who">
+                    <div class="av">AM</div>
+                    <div>
+                      <div class="nm">Arun Mehta</div>
+                      <div class="sub">PT-2088</div>
+                    </div>
+                  </td>
+                  <td>Cardiology</td>
+                  <td>Dr. [Cardiology]</td>
+                  <td class="tok">—</td>
+                  <td class="st"><span class="badge b-pending pulse">Arrived</span></td>
+                  <td><button class="btn btn-primary btn-sm" data-tok="A-14" onclick="checkIn(this)">Check in</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>11:00 AM</td>
+                  <td class="who">
+                    <div class="av">PK</div>
+                    <div>
+                      <div class="nm">Priya Kulkarni</div>
+                      <div class="sub">PT-1994</div>
+                    </div>
+                  </td>
+                  <td>Orthopedics</td>
+                  <td>Dr. [Orthopedics]</td>
+                  <td class="tok">—</td>
+                  <td class="st"><span class="badge b-pending pulse">Arrived</span></td>
+                  <td><button class="btn btn-primary btn-sm" data-tok="A-15" onclick="checkIn(this)">Check in</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>11:15 AM</td>
+                  <td class="who">
+                    <div class="av">SV</div>
+                    <div>
+                      <div class="nm">Sanjay Verma</div>
+                      <div class="sub">PT-2101</div>
+                    </div>
+                  </td>
+                  <td>General Medicine</td>
+                  <td>Dr. [General]</td>
+                  <td class="tok">—</td>
+                  <td class="st"><span class="badge b-cancelled">Not arrived</span></td>
+                  <td><button class="btn btn-primary btn-sm" data-tok="A-16" onclick="checkIn(this)">Check in</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>11:30 AM</td>
+                  <td class="who">
+                    <div class="av">MK</div>
+                    <div>
+                      <div class="nm">Meena Kumari</div>
+                      <div class="sub">PT-2120</div>
+                    </div>
+                  </td>
+                  <td>Dermatology</td>
+                  <td>Dr. [Dermatology]</td>
+                  <td class="tok">—</td>
+                  <td class="st"><span class="badge b-pending pulse">Arrived</span></td>
+                  <td><button class="btn btn-primary btn-sm" data-tok="A-17" onclick="checkIn(this)">Check in</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- REGISTER WALK-IN -->
+        <section class="screen" id="st-register">
+          <div class="page-head">
+            <div>
+              <h1>Register walk-in patient</h1>
+              <p>Create a quick registration and issue a queue token.</p>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="panel">
+              <div class="panel-h">
+                <h3>Patient details</h3>
+              </div>
+              <div class="field"><label>Full name</label><input id="rwName" placeholder="e.g. Ramesh Bhai"></div>
+              <div class="form-2">
+                <div class="field"><label>Age</label><input id="rwAge" placeholder="e.g. 42"></div>
+                <div class="field"><label>Gender</label><select id="rwGender">
+                    <option>Female</option>
+                    <option>Male</option>
+                    <option>Other</option>
+                  </select></div>
+                <div class="field"><label>Phone</label><input id="rwPhone" placeholder="[phone]"></div>
+                <div class="field"><label>Department</label><select id="rwDept">
+                    <option>Cardiology</option>
+                    <option>Orthopedics</option>
+                    <option>Neurology</option>
+                    <option>Pediatrics</option>
+                    <option>Dermatology</option>
+                    <option>ENT</option>
+                    <option>General Medicine</option>
+                    <option>Gynecology</option>
+                  </select></div>
+              </div>
+              <div class="field"><label>Reason for visit</label><input id="rwReason"
+                  placeholder="e.g. Fever and body ache"></div>
+              <button class="btn btn-primary btn-block" onclick="registerWalkin()"><svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4z" />
+                </svg>Register &amp; issue token</button>
+            </div>
+            <div>
+              <div class="panel" style="text-align:center">
+                <div class="panel-h" style="justify-content:center">
+                  <h3>Token issued</h3>
+                </div>
+                <div style="font-size:48px;font-weight:800;color:var(--blue);letter-spacing:1px;margin:6px 0"
+                  id="rwToken">—</div>
+                <p style="color:var(--muted);font-size:14px;margin-top:2px">Hand this token to the patient and direct
+                  them to the waiting area.</p>
+              </div>
+              <div class="panel">
+                <div class="panel-h">
+                  <h3>How it works</h3>
+                </div>
+                <div class="hist-item">
+                  <div class="dot"></div>
+                  <div>
+                    <div class="t">Fill in the patient's basic details</div>
+                    <div class="d">Name and department are required</div>
+                  </div>
+                </div>
+                <div class="hist-item">
+                  <div class="dot"></div>
+                  <div>
+                    <div class="t">A token is generated automatically</div>
+                    <div class="d">Added to the live queue board</div>
+                  </div>
+                </div>
+                <div class="hist-item">
+                  <div class="dot"></div>
+                  <div>
+                    <div class="t">Patient is called by token</div>
+                    <div class="d">From the token queue screen</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TOKEN QUEUE -->
+        <section class="screen" id="st-queue">
+          <div class="page-head">
+            <div>
+              <h1>Token queue</h1>
+              <p>Live waiting-area board · call patients in order.</p>
+            </div><button class="btn btn-primary btn-sm" onclick="callNext()"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M9 18V5l12-2v13" />
+                <circle cx="6" cy="18" r="3" />
+                <circle cx="18" cy="16" r="3" />
+              </svg>Call next</button>
+          </div>
+          <div class="grid-2">
+            <div class="panel" style="background:var(--grad-cta);color:#fff">
+              <div style="font-size:13px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;opacity:.85">Now
+                serving</div>
+              <div style="font-size:64px;font-weight:800;line-height:1.05;margin:8px 0" id="nowTok">A-08</div>
+              <div style="font-size:18px;font-weight:700" id="nowName">Rohit Sharma</div>
+              <div style="opacity:.85;font-size:14px" id="nowDept">Cardiology · Counter 2</div>
+            </div>
+            <div class="panel">
+              <div class="panel-h">
+                <h3>Up next</h3><span class="badge b-pending" id="waitCount">4 waiting</span>
+              </div>
+              <div class="appt-list" id="queueList"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- NURSING STATION -->
+        <section class="screen" id="st-nursing">
+          <div class="page-head">
+            <div>
+              <h1>Nursing station</h1>
+              <p>Ward 2 · General — assigned inpatients and rounds.</p>
+            </div>
+            <div class="chip"><span class="badge b-available" style="background:none;padding:0">On shift</span> Morning
+            </div>
+          </div>
+          <div class="stat-grid">
+            <div class="stat">
+              <div class="ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M2 20h20M4 20v-8h16v8M6 12V8a2 2 0 0 1 2-2h3v6" />
+                  <circle cx="8" cy="9" r="1" />
+                </svg></div>
+              <div class="v" data-count="8">0</div>
+              <div class="k">Assigned patients</div>
+            </div>
+            <div class="stat">
+              <div class="ic ic-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10.5 20.5 3.5 13.5a5 5 0 0 1 7-7l7 7a5 5 0 0 1-7 7z" />
+                  <path d="m8.5 8.5 7 7" />
+                </svg></div>
+              <div class="v" data-count="5">0</div>
+              <div class="k">Medications due</div>
+            </div>
+            <div class="stat">
+              <div class="ic ic-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg></div>
+              <div class="v" data-count="3">0</div>
+              <div class="k">Vitals to record</div>
+            </div>
+            <div class="stat">
+              <div class="ic ic-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="8" y="3" width="8" height="4" rx="1" />
+                  <path d="M8 5H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
+                  <path d="M9 12h6M9 16h4" />
+                </svg></div>
+              <div class="v" data-count="4">0</div>
+              <div class="k">Open tasks</div>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="panel">
+              <div class="panel-h">
+                <h3>Medication schedule</h3>
+              </div>
+              <table class="tbl">
+                <thead>
+                  <tr>
+                    <th>Patient</th>
+                    <th>Bed</th>
+                    <th>Medicine</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="who">
+                      <div class="av">NP</div>
+                      <div>
+                        <div class="nm">Nikhil Patel</div>
+                        <div class="sub">G-01</div>
+                      </div>
+                    </td>
+                    <td>G-01</td>
+                    <td>Amlodipine 5mg</td>
+                    <td>10:00</td>
+                    <td class="st"><span class="badge b-completed">Given</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td class="who">
+                      <div class="av">MK</div>
+                      <div>
+                        <div class="nm">Meena Kumari</div>
+                        <div class="sub">G-07</div>
+                      </div>
+                    </td>
+                    <td>G-07</td>
+                    <td>Ceftriaxone 1g IV</td>
+                    <td>11:00</td>
+                    <td class="st"><span class="badge b-pending pulse">Due</span></td>
+                    <td><button class="btn btn-primary btn-sm" onclick="markGiven(this)">Mark given</button></td>
+                  </tr>
+                  <tr>
+                    <td class="who">
+                      <div class="av">RT</div>
+                      <div>
+                        <div class="nm">Ravi Thakkar</div>
+                        <div class="sub">G-11</div>
+                      </div>
+                    </td>
+                    <td>G-11</td>
+                    <td>Paracetamol 650mg</td>
+                    <td>11:30</td>
+                    <td class="st"><span class="badge b-pending pulse">Due</span></td>
+                    <td><button class="btn btn-primary btn-sm" onclick="markGiven(this)">Mark given</button></td>
+                  </tr>
+                  <tr>
+                    <td class="who">
+                      <div class="av">SG</div>
+                      <div>
+                        <div class="nm">Sita Gohel</div>
+                        <div class="sub">G-16</div>
+                      </div>
+                    </td>
+                    <td>G-16</td>
+                    <td>Insulin (sliding scale)</td>
+                    <td>12:00</td>
+                    <td class="st"><span class="badge b-pending pulse">Due</span></td>
+                    <td><button class="btn btn-primary btn-sm" onclick="markGiven(this)">Mark given</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="panel">
+              <div class="panel-h">
+                <h3>Vitals to record</h3>
+              </div>
+              <div class="appt-list">
+                <div class="appt">
+                  <div class="av">MK</div>
+                  <div class="info">
+                    <div class="nm">Meena Kumari</div>
+                    <div class="sub">G-07 · BP, temp, SpO₂</div>
+                  </div><button class="btn btn-ghost btn-sm" onclick="recordVitals(this)">Record</button>
+                </div>
+                <div class="appt">
+                  <div class="av">RT</div>
+                  <div class="info">
+                    <div class="nm">Ravi Thakkar</div>
+                    <div class="sub">G-11 · Pulse, temp</div>
+                  </div><button class="btn btn-ghost btn-sm" onclick="recordVitals(this)">Record</button>
+                </div>
+                <div class="appt">
+                  <div class="av">SG</div>
+                  <div class="info">
+                    <div class="nm">Sita Gohel</div>
+                    <div class="sub">G-16 · Blood sugar</div>
+                  </div><button class="btn btn-ghost btn-sm" onclick="recordVitals(this)">Record</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </div>
     </div>
-    <div class="modal-f">
-      <button class="btn btn-ghost" onclick="closeStaff()">Cancel</button>
-      <button class="btn btn-primary" onclick="saveStaff()">Add member</button>
+  </main>
+
+  <!-- ===== AUTH GATE (sign in / sign up) ===== -->
+  <!-- ADD STAFF MODAL -->
+  <div class="modal-overlay" id="staffModal">
+    <div class="modal" role="dialog" aria-modal="true">
+      <div class="modal-h">
+        <div>
+          <h3>Add staff member</h3>
+          <p>Enter details to add a new member to the directory.</p>
+        </div>
+        <button class="modal-x" onclick="closeStaff()" aria-label="Close"><svg viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg></button>
+      </div>
+      <div class="modal-b">
+        <div class="field"><label>Full name</label><input id="sfName" placeholder="e.g. Dr. [Cardiology] or Kavita Rao">
+        </div>
+        <div class="form-2">
+          <div class="field"><label>Role</label>
+            <select id="sfRole">
+              <option value="Doctor">Doctor</option>
+              <option value="Head Nurse">Head Nurse</option>
+              <option value="Nurse">Nurse</option>
+              <option value="Receptionist">Receptionist</option>
+              <option value="Lab Technician">Lab Technician</option>
+              <option value="Pharmacist">Pharmacist</option>
+              <option value="Ward Assistant">Ward Assistant</option>
+              <option value="Administrator">Administrator</option>
+            </select>
+          </div>
+          <div class="field"><label>Department</label>
+            <select id="sfDept">
+              <option>Cardiology</option>
+              <option>Orthopedics</option>
+              <option>Neurology</option>
+              <option>Pediatrics</option>
+              <option>Dermatology</option>
+              <option>ENT</option>
+              <option>General Medicine</option>
+              <option>Gynecology</option>
+              <option>ICU</option>
+              <option>Diagnostics</option>
+              <option>Pharmacy</option>
+              <option>Front Desk</option>
+              <option>Administration</option>
+            </select>
+          </div>
+          <div class="field"><label>Shift</label>
+            <select id="sfShift">
+              <option>Morning</option>
+              <option>Evening</option>
+              <option>Night</option>
+              <option>Rotational</option>
+            </select>
+          </div>
+          <div class="field"><label>Status</label>
+            <select id="sfStatus">
+              <option value="active">Active</option>
+              <option value="onleave">On leave</option>
+              <option value="inactive">Inactive</option>
+            </select>
+          </div>
+          <div class="field"><label>Phone <span
+                style="color:var(--muted);font-weight:500">(optional)</span></label><input id="sfPhone"
+              placeholder="[phone]"></div>
+          <div class="field"><label>Email <span
+                style="color:var(--muted);font-weight:500">(optional)</span></label><input id="sfEmail"
+              placeholder="[email]"></div>
+        </div>
+      </div>
+      <div class="modal-f">
+        <button class="btn btn-ghost" onclick="closeStaff()">Cancel</button>
+        <button class="btn btn-primary" onclick="saveStaff()">Add member</button>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="toast" id="toast"><div class="tk"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><span id="toastMsg">Done</span></div>
+  <div class="toast" id="toast">
+    <div class="tk"><svg viewBox="0 0 24 24">
+        <path d="M20 6 9 17l-5-5" />
+      </svg></div><span id="toastMsg">Done</span>
+  </div>
 
-<script src="assets/js/app.js"></script>
+  <script src="assets/js/app.js"></script>
 
 
 </body>
+
 </html>
