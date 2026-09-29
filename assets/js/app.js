@@ -106,11 +106,21 @@ function switchView(v){
  window.scrollTo({top:0,behavior:'instant'});
  setTimeout(()=>animateIn(document.getElementById('view-'+v)),60);
 }
-document.querySelectorAll('#switcher button').forEach(b=>b.onclick=()=>switchView(b.dataset.view));
+document.querySelectorAll('#switcher button').forEach(b=>b.onclick=()=>enterView(b.dataset.view));
 document.getElementById('menuBtn').onclick=()=>{
  const v=document.querySelector('.view.on').id.replace('view-','');
  const s=document.getElementById('side-'+v); if(s)s.classList.toggle('open');
 };
+
+/* ---------- Portal entry (prototype demo — no sign in required) ---------- */
+function enterView(v){switchView(v);}
+function viewInPortal(){
+ enterView('patient');
+ // Jump straight to the Appointments screen so the new booking is visible
+ setTimeout(()=>ptGo('pt-appts'),80);
+}
+// "Sign out" simply returns to the public website in this demo
+function signOut(){toast('Returned to website');switchView('web');}
 
 /* ---------- Portal sidebar nav ---------- */
 document.querySelectorAll('.nav-item').forEach(item=>{
@@ -241,6 +251,7 @@ function pickSlot(el,s){
 }
 function confirmBooking(){
  const name=document.getElementById('pName').value||'Riya Sharma';
+ const ref='APT-'+Math.floor(1000+Math.random()*9000);
  const r=document.getElementById('rcpt');
  r.innerHTML=`
   <div class="r"><span>Patient</span><b>${name}</b></div>
@@ -248,8 +259,28 @@ function confirmBooking(){
   <div class="r"><span>Department</span><b>${booking.dept.n}</b></div>
   <div class="r"><span>Date</span><b>${booking.date}</b></div>
   <div class="r"><span>Time</span><b>${booking.slot}</b></div>
-  <div class="r"><span>Reference</span><b>APT-${Math.floor(1000+Math.random()*9000)}</b></div>`;
+  <div class="r"><span>Reference</span><b>${ref}</b></div>`;
+ addAppointmentToPortal({name,doc:booking.doc,dept:booking.dept,date:booking.date,slot:booking.slot,ref});
  webGo('confirm');
+}
+/* Inject a newly booked appointment into the patient portal upcoming lists */
+function addAppointmentToPortal(a){
+ const parts=(a.slot||'').trim().split(/\s+/);
+ const time=parts[0]||a.slot||'';
+ const ampm=parts[1]||'';
+ let dateLabel=ampm;
+ if(a.date){
+  const d=new Date(a.date+'T00:00:00');
+  if(!isNaN(d)){dateLabel=(ampm?ampm+' · ':'')+d.toLocaleDateString('en-IN',{day:'2-digit',month:'short'});}
+ }
+ const av=a.doc.i||initials(a.doc.n);
+ const card=`<div class="appt"><div class="tm"><div class="h">${time}</div><div class="m">${dateLabel}</div></div><div class="sep"></div><div class="av">${av}</div><div class="info"><div class="nm">${a.doc.n}</div><div class="sub">${a.dept.n} · New appointment</div></div><span class="badge b-confirmed">Confirmed</span></div>`;
+ ['ptApptUpcoming','ptDashUpcoming'].forEach(id=>{
+  const list=document.getElementById(id);
+  if(list)list.insertAdjacentHTML('afterbegin',card);
+ });
+ const cnt=document.querySelector('#pt-dash .stat .v[data-count]');
+ if(cnt){const n=(parseInt(cnt.dataset.count,10)||0)+1;cnt.dataset.count=n;cnt.textContent=n;}
 }
 
 /* ---------- Doctor consultation ---------- */

@@ -19,7 +19,7 @@
         <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><path d="M12 3a4 4 0 0 1 4 4v10a4 4 0 0 1-8 0V7a4 4 0 0 1 4-4Z" stroke="#fff" stroke-width="1.6" opacity=".55"/></svg>
       </div>
       <div>
-        <div class="brand-name">Astha<span>+</span></div>
+        <div class="brand-name">Astha<span>+</span> <span class="demo-tag">Demo</span></div>
         <div class="brand-sub">Multispeciality Hospital</div>
       </div>
     </div>
@@ -177,153 +177,11 @@
         <h2>Appointment confirmed</h2>
         <p>A confirmation has been sent to your mobile number. Please arrive 10 minutes early.</p>
         <div class="rcpt" id="rcpt"></div>
-        <div style="display:flex;gap:12px"><button class="btn btn-ghost btn-block" onclick="webGo('home')">Back to home</button><button class="btn btn-primary btn-block" onclick="switchView('patient')">View in portal</button></div>
+        <div style="display:flex;gap:12px"><button class="btn btn-ghost btn-block" onclick="webGo('home')">Back to home</button><button class="btn btn-primary btn-block" onclick="viewInPortal()">View in portal</button></div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT SANGAM INFOANALYTICS -->
-  <section class="screen" id="web-sangam">
-
-    <!-- HERO -->
-    <div class="sg-hero">
-      <div class="wrap">
-        <div class="sg-eyebrow"><span class="dot"></span> The team behind this application</div>
-        <h1 class="sg-h1">We are <span>Sangam InfoAnalytics</span></h1>
-        <p class="sg-lead">An AI-first software company that turns everyday business problems into clean, working software. We designed and built this Astha Hospital platform — and we build custom web &amp; mobile applications for clinics, hospitals and growing businesses across India.</p>
-        <div class="sg-hero-cta">
-          <a class="sg-btn-w" href="mailto:sangam.infoanalytics@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>Talk to us</a>
-          <button class="sg-btn-o" onclick="webGo('home')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>Back to hospital site</button>
-        </div>
-        <div class="sg-strip">
-          <div><div class="s-v">AI-first</div><div class="s-k">Automation built in</div></div>
-          <div><div class="s-v">End-to-end</div><div class="s-k">Design → build → deploy → support</div></div>
-          <div><div class="s-v">Prototype-led</div><div class="s-k">You approve before we build</div></div>
-          <div><div class="s-v">India-based</div><div class="s-k">Junagadh, Gujarat</div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- WHO WE ARE -->
-    <div class="sg-sec">
-      <div class="wrap sg-who">
-        <div>
-          <div class="sg-kicker">Who we are</div>
-          <h2 class="sg-h2">A small, focused team that ships real software</h2>
-          <p>Sangam InfoAnalytics is an <b>AI-first software company based in Junagadh, Gujarat</b>. We take a real-world workflow, prototype it quickly — exactly like the interactive Astha Hospital demo you just explored — and then engineer it into a secure, production-ready application.</p>
-          <p>We work close to the ground: no layers, no jargon, direct access to the people building your product. Our focus is <b>execution</b> — turning ideas and manual processes into software that people actually use every day.</p>
-          <p>Alongside client projects, we build our own products — <b>GSTfy</b> (GST compliance), <b>PrivoBooks</b> (accounting &amp; bank-statement analysis) and <b>Memoria</b> (a digital ledger for shopkeepers) — so we understand real business operations, not just code.</p>
-        </div>
-        <div class="sg-panel">
-          <h3>What you can expect from us</h3>
-          <ul class="sg-list">
-            <li><span class="sg-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> A working prototype before any development starts</li>
-            <li><span class="sg-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Clear, module-wise scope, timeline and pricing</li>
-            <li><span class="sg-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> AI used practically to cut manual, repetitive work</li>
-            <li><span class="sg-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span> Ongoing support after go-live</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- WHAT WE DO -->
-    <div class="sg-sec sg-band">
-      <div class="wrap">
-        <div class="sg-kicker">What we do</div>
-        <h2 class="sg-h2">Software built around your workflow</h2>
-        <p class="sg-sub">Not off-the-shelf compromises — systems shaped to how your business actually runs.</p>
-        <div class="sg-grid sg-3">
-          <div class="sg-card">
-            <div class="sg-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg></div>
-            <h3>Custom web applications</h3>
-            <p>Tailored platforms and portals built exactly around your processes, roles and reporting needs.</p>
-          </div>
-          <div class="sg-card">
-            <div class="sg-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18" stroke-linecap="round"/></svg></div>
-            <h3>Healthcare &amp; clinic systems</h3>
-            <p>Patient, doctor, staff and admin portals — appointments, IPD &amp; beds, billing, lab and records, like this Astha build.</p>
-          </div>
-          <div class="sg-card">
-            <div class="sg-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 0 1 5 5c0 2-1 3-1 5H8c0-2-1-3-1-5a5 5 0 0 1 5-5z"/><path d="M9 17h6M10 21h4"/></svg></div>
-            <h3>AI-powered automation</h3>
-            <p>Practical AI that reads documents, extracts data, summarises and assists — removing hours of manual entry.</p>
-          </div>
-          <div class="sg-card">
-            <div class="sg-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
-            <h3>Mobile &amp; PWA apps</h3>
-            <p>Installable, offline-capable apps for staff and customers — fast, lightweight and app-store optional.</p>
-          </div>
-          <div class="sg-card">
-            <div class="sg-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v14H3z"/><path d="M8 21h8M12 17v4M7 9l2 2 3-4 2 3 2-2"/></svg></div>
-            <h3>Business &amp; finance tools</h3>
-            <p>GST compliance, accounting, bank-statement analysis and digital ledgers — our own live products.</p>
-          </div>
-          <div class="sg-card">
-            <div class="sg-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v12H4z"/><path d="M9 20h6M4 9h16"/><circle cx="7" cy="6.5" r="1"/></svg></div>
-            <h3>Rapid prototyping</h3>
-            <p>A clickable prototype first — so you see, feel and approve the product before a rupee goes into development.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- HOW WE SOLVE PROBLEMS -->
-    <div class="sg-sec">
-      <div class="wrap">
-        <div class="sg-kicker">How we help you</div>
-        <h2 class="sg-h2">We turn everyday problems into solved workflows</h2>
-        <p class="sg-sub">The pain points most businesses live with — and what they become once the right software is in place.</p>
-        <div class="sg-grid sg-2">
-          <div class="sg-prob"><div class="p-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h5"/></svg></div><div class="p-body"><div class="p-t">Registers, files &amp; paperwork</div><div class="p-s">Digital records with instant search &amp; backups</div></div><div class="p-arrow">→</div></div>
-          <div class="sg-prob"><div class="p-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.5a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg></div><div class="p-body"><div class="p-t">Patients calling to book</div><div class="p-s">Self-service online booking &amp; token queue</div></div><div class="p-arrow">→</div></div>
-          <div class="sg-prob"><div class="p-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M5 12H2M22 12h-3M12 5V2M12 22v-3"/></svg></div><div class="p-body"><div class="p-t">Data scattered across WhatsApp &amp; Excel</div><div class="p-s">One secure, connected system</div></div><div class="p-arrow">→</div></div>
-          <div class="sg-prob"><div class="p-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></div><div class="p-body"><div class="p-t">No online presence</div><div class="p-s">Professional website &amp; customer portal</div></div><div class="p-arrow">→</div></div>
-          <div class="sg-prob"><div class="p-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div><div class="p-body"><div class="p-t">Slow, error-prone billing</div><div class="p-s">Automated invoices &amp; online payments</div></div><div class="p-arrow">→</div></div>
-          <div class="sg-prob"><div class="p-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div><div class="p-body"><div class="p-t">No visibility for owners</div><div class="p-s">Live dashboards &amp; reports</div></div><div class="p-arrow">→</div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- OUR APPROACH -->
-    <div class="sg-sec sg-band">
-      <div class="wrap">
-        <div class="sg-kicker">How we work</div>
-        <h2 class="sg-h2">A simple, low-risk process</h2>
-        <p class="sg-sub">You always see progress you can touch — starting with a prototype, not a promise.</p>
-        <div class="sg-steps">
-          <div class="sg-step"><div class="n">1</div><h3>Understand</h3><p>We learn your exact workflow, roles and pain points.</p></div>
-          <div class="sg-step"><div class="n">2</div><h3>Prototype</h3><p>A clickable demo you can review and approve.</p></div>
-          <div class="sg-step"><div class="n">3</div><h3>Build</h3><p>Module-wise development with clear milestones.</p></div>
-          <div class="sg-step"><div class="n">4</div><h3>Test &amp; deploy</h3><p>Secured, tested and taken live on your cloud.</p></div>
-          <div class="sg-step"><div class="n">5</div><h3>Support</h3><p>Ongoing fixes, improvements and help after launch.</p></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CONTACT CTA -->
-    <div class="sg-sec">
-      <div class="wrap">
-        <div class="sg-cta">
-          <div class="wrapx">
-            <div>
-              <h2>Have a workflow worth digitising?</h2>
-              <p>Whether it's a hospital, a clinic or any growing business — tell us the problem, and we'll show you the software that solves it. Just like we did for Astha.</p>
-              <div class="sg-cta-btns">
-                <a class="sg-btn-w" href="mailto:sangam.infoanalytics@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>Email us</a>
-                <a class="sg-btn-o" href="tel:+918490002023"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.5a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>Call us</a>
-              </div>
-            </div>
-            <div class="sg-contact">
-              <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg><span>sangam.infoanalytics@gmail.com</span></div>
-              <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.5a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg><span><b>+91 84900 02023</b></span></div>
-              <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Junagadh, Gujarat, India</span></div>
-              <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M7 15h4"/></svg><span>GSTIN 24AEWFS5457B1ZP</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- FOOTER -->
   <footer class="foot">
@@ -336,7 +194,7 @@
       <div><h5>Patients</h5><a>Patient portal</a><a>Lab reports</a><a>Billing</a><a>Insurance</a></div>
       <div><h5>Contact</h5><a>Emergency: [placeholder]</a><a>Reception: [placeholder]</a><a>[Hospital address]</a><a>[City, State]</a></div>
     </div>
-    <div class="wrap"><div class="cr">© Astha Multispeciality Hospital — prototype for demonstration. All details shown are placeholders. &nbsp;·&nbsp; <a onclick="webGo('sangam')" style="color:#fff;text-decoration:underline;cursor:pointer;font-weight:600">Designed &amp; developed by Sangam InfoAnalytics</a></div></div>
+    <div class="wrap"><div class="cr">© Astha Multispeciality Hospital — prototype for demonstration. All details shown are placeholders. &nbsp;·&nbsp; <a href="https://www.sangaminfoanalytics.online/" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:underline;cursor:pointer;font-weight:600">Designed &amp; developed by Sangam InfoAnalytics</a></div></div>
   </footer>
 </main>
 
@@ -354,6 +212,7 @@
     <div class="nav-item" data-scr="pt-billing"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Billing</div>
     <div class="nav-lbl">Account</div>
     <div class="nav-item" data-scr="pt-profile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>Profile</div>
+    <button class="side-signout" onclick="signOut()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>Sign out</button>
   </aside>
   <div class="main">
     <!-- DASHBOARD -->
@@ -369,7 +228,7 @@
         <div>
           <div class="panel">
             <div class="panel-h"><h3>Upcoming appointments</h3><a onclick="ptGo('pt-appts')">View all</a></div>
-            <div class="appt-list">
+            <div class="appt-list" id="ptDashUpcoming">
               <div class="appt"><div class="tm"><div class="h">10:30</div><div class="m">AM</div></div><div class="sep"></div><div class="av">C</div><div class="info"><div class="nm">Dr. [Cardiology]</div><div class="sub">Cardiology · Follow-up consultation</div></div><span class="badge b-confirmed">Confirmed</span></div>
               <div class="appt"><div class="tm"><div class="h">04:00</div><div class="m">PM</div></div><div class="sep"></div><div class="av">D</div><div class="info"><div class="nm">Dr. [Dermatology]</div><div class="sub">Dermatology · New consultation</div></div><span class="badge b-pending pulse">Pending</span></div>
             </div>
@@ -407,7 +266,7 @@
     <section class="screen" id="pt-appts">
       <div class="page-head"><div><h1>Appointments</h1><p>Your scheduled and past visits.</p></div><button class="btn btn-primary btn-sm" onclick="switchView('web');startBooking()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>New appointment</button></div>
       <div class="panel"><div class="panel-h"><h3>Upcoming</h3></div>
-        <div class="appt-list">
+        <div class="appt-list" id="ptApptUpcoming">
           <div class="appt"><div class="tm"><div class="h">10:30</div><div class="m">AM · Tmrw</div></div><div class="sep"></div><div class="av">C</div><div class="info"><div class="nm">Dr. [Cardiology]</div><div class="sub">Cardiology · Room 204</div></div><span class="badge b-confirmed">Confirmed</span></div>
           <div class="appt"><div class="tm"><div class="h">04:00</div><div class="m">PM · Fri</div></div><div class="sep"></div><div class="av">D</div><div class="info"><div class="nm">Dr. [Dermatology]</div><div class="sub">Dermatology · Room 118</div></div><span class="badge b-pending pulse">Pending</span></div>
         </div>
@@ -507,6 +366,7 @@
     <div class="nav-item" data-scr="dr-patients"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M3 21c0-3.5 3-5.5 6-5.5s6 2 6 5.5"/><path d="M17 7h4M19 5v4"/></svg>My patients</div>
     <div class="nav-item" data-scr="dr-consult"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 13h6M9 17h4"/></svg>Consultation</div>
     <div class="nav-item" data-scr="dr-lab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3v6l-5 8a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3l-5-8V3"/></svg>Lab reports</div>
+    <button class="side-signout" onclick="signOut()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>Sign out</button>
   </aside>
   <div class="main">
     <!-- DOCTOR DASHBOARD -->
@@ -632,6 +492,7 @@
     <div class="nav-item" data-scr="ad-depts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V7l9-4 9 4v14"/><path d="M9 21v-6h6v6"/></svg>Departments</div>
     <div class="nav-item" data-scr="ad-staff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>Staff</div>
     <div class="nav-item" data-scr="ad-billing"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Billing</div>
+    <button class="side-signout" onclick="signOut()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>Sign out</button>
   </aside>
   <div class="main">
     <!-- ADMIN DASHBOARD -->
@@ -791,6 +652,7 @@
     <div class="nav-item" data-scr="st-queue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>Token queue</div>
     <div class="nav-lbl">Wards</div>
     <div class="nav-item" data-scr="st-nursing"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M4 20v-8h16v8M6 12V8a2 2 0 0 1 2-2h3v6"/><circle cx="8" cy="9" r="1"/></svg>Nursing station<span class="cnt">5</span></div>
+    <button class="side-signout" onclick="signOut()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>Sign out</button>
   </aside>
   <div class="main">
 
@@ -919,6 +781,7 @@
  </div>
 </main>
 
+<!-- ===== AUTH GATE (sign in / sign up) ===== -->
 <!-- ADD STAFF MODAL -->
 <div class="modal-overlay" id="staffModal">
   <div class="modal" role="dialog" aria-modal="true">
